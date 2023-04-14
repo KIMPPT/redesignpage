@@ -14,3 +14,8 @@ td
 {
     padding-bottom:50px;
 }
+.navwrap{
+    position:relative;
+    bottom:10%;
+    left:-20%;
+}

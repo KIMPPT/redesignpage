@@ -4,6 +4,10 @@ export default function Main() {
   return (
     <div>
       <img src="" alt="이미지자리입니다" className="mainimagelarge"/>
+      <div className="navwrap">
+        <img src="" alt="작은이미지1입니다" />
+        <img src="" alt="작은이미지2입니다" />
+      </div>
       <div>
         <table>
           <tbody>
