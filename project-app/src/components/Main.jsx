@@ -8,7 +8,7 @@ export default function Main() {
       </div>
       <div className="nav">
         <img src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/100.png" alt="작은이미지1입니다" className="wrap" />
-        <img src="" alt="작은이미지2입니다" className="wrap" />
+        <img src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/100-2.png" alt="작은이미지2입니다" className="wrap" />
       </div>
       <div>
         <table>

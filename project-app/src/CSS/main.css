@@ -8,8 +8,11 @@
 }
 .nav {
     position: absolute;
+    display:flex;
+    justify-content: space-evenly;
+    width:500px;
     top: 45%;
-    left: 10%;
+    left: 5%;
     height:100px;
   }
 .nav>.wrap {
@@ -21,7 +24,7 @@
 }
 table {
   position: relative;
-  left: 50%;
+  right:-70%;
 }
 td {
   padding-bottom: 50px;
@@ -29,10 +32,14 @@ td {
 .box {
   height: 550px;
   border: solid 1px black;
+  width:90vw;
 }
 
 .buttons {
   position: absolute;
-  left: 50vw;
+  display:flex;
+  justify-content: space-evenly;
+  width:70vw;
+  left:10vw;
   bottom: 42%;
 }
