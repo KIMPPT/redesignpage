@@ -1,21 +1,32 @@
 .mainimagelarge {
-    position: absolute;
-    left: 15%;
-    width: 300px;
-    height: 300px;
-    border: solid 1px black;
+  position: absolute;
+  left: 15%;
+  width: 300px;
+  height: 300px;
+  border: solid 1px black;
 }
-
+.navwrap {
+  border: solid 1px black;
+  margin: 0 10px;
+}
 table {
-    position: relative;
-    left: 50%;
+  position: relative;
+  left: 50%;
 }
-td
-{
-    padding-bottom:50px;
+td {
+  padding-bottom: 50px;
 }
-.navwrap{
-    position:relative;
-    bottom:10%;
-    left:-20%;
+.box {
+  height: 550px;
+  border: solid 1px black;
+}
+.nav {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+.buttons{
+    position:absolute;
+    left:50vw;
+    bottom:42%;
 }

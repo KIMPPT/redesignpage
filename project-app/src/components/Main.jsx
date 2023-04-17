@@ -2,11 +2,13 @@ import React from "react";
 import "../CSS/main.css";
 export default function Main() {
   return (
-    <div>
-      <img src="" alt="이미지자리입니다" className="mainimagelarge"/>
-      <div className="navwrap">
-        <img src="" alt="작은이미지1입니다" />
-        <img src="" alt="작은이미지2입니다" />
+    <div className="box">
+      <div>
+        <img src="" alt="이미지자리입니다" className="mainimagelarge" />
+      </div>
+      <div className="nav">
+        <img src="" alt="작은이미지1입니다" className="navwrap" />
+        <img src="" alt="작은이미지2입니다" className="navwrap" />
       </div>
       <div>
         <table>
@@ -38,10 +40,10 @@ export default function Main() {
           </tbody>
         </table>
       </div>
-      <div>
-      <button>물품 설명</button>
-      <button>상세 설명</button>
-      <button>관련 물품</button>
+      <div className="buttons">
+        <button>물품 설명</button>
+        <button>상세 설명</button>
+        <button>관련 물품</button>
       </div>
     </div>
   );
