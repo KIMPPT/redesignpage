@@ -4,11 +4,11 @@ export default function Main() {
   return (
     <div className="box">
       <div>
-        <img src="../image/300.png" alt="이미지자리입니다" className="mainimagelarge" />
+        <img src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/300.png" alt="이미지자리입니다" className="mainimagelarge" />
       </div>
       <div className="nav">
-        <img src="" alt="작은이미지1입니다" className="navwrap" />
-        <img src="" alt="작은이미지2입니다" className="navwrap" />
+        <img src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/100.png" alt="작은이미지1입니다" className="wrap" />
+        <img src="" alt="작은이미지2입니다" className="wrap" />
       </div>
       <div>
         <table>
