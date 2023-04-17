@@ -4,10 +4,12 @@
   width: 300px;
   height: 300px;
   border: solid 1px black;
+  margin-top: 10px;
 }
 .navwrap {
   border: solid 1px black;
   margin: 0 10px;
+  height: 100px;
 }
 table {
   position: relative;
@@ -25,8 +27,8 @@ td {
   top: 50%;
   left: 10%;
 }
-.buttons{
-    position:absolute;
-    left:50vw;
-    bottom:42%;
+.buttons {
+  position: absolute;
+  left: 50vw;
+  bottom: 42%;
 }
