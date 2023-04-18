@@ -1,11 +1,17 @@
 import React from "react";
 import "../CSS/main.css";
+import { useState } from "react";
 export default function Main() {
+  let tax=document.querySelector("#tax"); 
+  //let exist=document.querySelector("#exist"); 
+  console.log(tax);
+  //console.log(exist.childNodes[0]);
+  let [choice,setChoice]=useState();
   return (
     <div className="box">
       <div>
         <img
-          src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/300.png"
+          src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/300-1.png"
           alt="이미지자리입니다"
           className="mainimagelarge"
         />
@@ -20,6 +26,7 @@ export default function Main() {
           src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/100-2.png"
           alt="작은이미지2입니다"
           className="wrap"
+          onClick={() => {}}
         />
       </div>
       <div>
@@ -42,19 +49,28 @@ export default function Main() {
             <tr>
               <td>구매 수량 :</td>
               <td>
-                <input type="number" name="" id="" placeholder="0" min={0} />
+                <input
+                  type="number"
+                  name=""
+                  id=""
+                  placeholder="0"
+                  min={0}
+                  onChange={(e) => e.target.value}
+                />
               </td>
             </tr>
             <tr>
               <td>배송비 :</td>
               <td>
-                N개 미만 : 3000원 <br />
+                N개 미만 : <span id="tax">3000</span> 원 <br />
                 N개 이상 : 무료
               </td>
             </tr>
             <tr>
               <td>현재 재고량 :</td>
-              <td>M개</td>
+              <td>
+                <span id="exist">200</span>개
+              </td>
             </tr>
             <tr>
               <td>최종 가격 : </td>
@@ -64,10 +80,14 @@ export default function Main() {
         </table>
       </div>
       <div className="buy">
-        <button 
-        onClick={()=>{alert("보관하였습니다")}}>보관하기</button>
         <button
-        onClick={()=>{}}>구매하기</button>
+          onClick={() => {
+            alert("보관하였습니다");
+          }}
+        >
+          보관하기
+        </button>
+        <button onClick={() => {}}>구매하기</button>
       </div>
       <div className="buttons">
         <button>물품 설명</button>

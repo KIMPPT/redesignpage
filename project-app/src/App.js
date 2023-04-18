@@ -1,16 +1,16 @@
 import "./App.css";
-import Main from "./components/Main";
-import Infor from "./components/Infor";
-import Detail from "./components/Detail";
-import Others from "./components/Others";
-import {Routes,Route} from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
+import Home from "./page/Home";
+import DataContext from "./context/DataContext";
+import { DataProvider } from "./context/DataContext";
 function App() {
   return (
     <div className="App">
-      <Main />
-      <Infor />
-      <Detail/>
-      <Others/>
+      <DataProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </DataProvider>
     </div>
   );
 }
