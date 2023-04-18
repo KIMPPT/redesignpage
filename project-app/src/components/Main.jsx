@@ -65,7 +65,8 @@ export default function Main() {
       </div>
       <div className="buy">
         <button>보관하기</button>
-        <button>구매하기</button>
+        <button
+        onClick={()=>{}}>구매하기</button>
       </div>
       <div className="buttons">
         <button>물품 설명</button>

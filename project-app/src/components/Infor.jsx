@@ -9,7 +9,8 @@ export default function Infor() {
         className="inforimg on"
       />
       <div className="boxbutton">
-      <button className="inforbutton">더 보기</button>
+      <button className="inforbutton"
+      onClick={()=>{}}>더 보기</button>
       </div>
     </div>
   );
