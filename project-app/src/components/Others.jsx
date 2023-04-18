@@ -1,25 +1,29 @@
 import React from "react";
-import '../CSS/others.css'
+import "../CSS/others.css";
 export default function Others() {
   return (
     <div>
-      <div>
-        <button>-1</button>
-        <button>+1</button>
-      </div>
       <div className="otherflex">
+        <button className="left go">{`<`}</button>
         <div>
-          <img src="" alt="" />
-          <p>제품2</p>
+          <a href="">
+            <img src="" alt="" />
+            <p>제품2</p>
+          </a>
         </div>
         <div>
-          <img src="" alt="" />
-          <p>제품3</p>
+        <a href="">
+            <img src="" alt="" />
+            <p>제품3</p>
+          </a>
         </div>
         <div>
-          <img src="" alt="" />
-          <p>제품4</p>
+        <a href="">
+            <img src="" alt="" />
+            <p>제품4</p>
+          </a>
         </div>
+        <button className="right go">{`>`}</button>
       </div>
       <button>제품군2</button>
       <button>제품군3</button>

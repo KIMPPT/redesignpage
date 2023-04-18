@@ -64,7 +64,8 @@ export default function Main() {
         </table>
       </div>
       <div className="buy">
-        <button>보관하기</button>
+        <button 
+        onClick={()=>{alert("보관하였습니다")}}>보관하기</button>
         <button
         onClick={()=>{}}>구매하기</button>
       </div>
