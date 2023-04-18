@@ -12,3 +12,9 @@ a{
     text-decoration:none;
     color:black;
 }
+.otherbuttons{
+    margin-top:30px;
+    width:90vw;
+    display:flex;
+    justify-content: space-evenly;
+}

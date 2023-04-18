@@ -7,27 +7,41 @@ export default function Others() {
         <button className="left go">{`<`}</button>
         <div>
           <a href="">
-            <img src="" alt="" />
-            <p>제품2</p>
+            <img
+              src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/50.png"
+              alt=""
+            />
+            <br />
+            <span>제품2</span>
           </a>
         </div>
         <div>
-        <a href="">
-            <img src="" alt="" />
-            <p>제품3</p>
+          <a href="">
+            <img
+              src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/50.png"
+              alt=""
+            />
+            <br />
+            <span>제품3</span>
           </a>
         </div>
         <div>
-        <a href="">
-            <img src="" alt="" />
-            <p>제품4</p>
+          <a href="">
+            <img
+              src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/50.png"
+              alt=""
+            />
+            <br />
+            <span>제품4</span>
           </a>
         </div>
         <button className="right go">{`>`}</button>
       </div>
-      <button>제품군2</button>
-      <button>제품군3</button>
-      <button>제품군4</button>
+      <div className="otherbuttons">
+        <button>제품군2</button>
+        <button>제품군3</button>
+        <button>제품군4</button>
+      </div>
     </div>
   );
 }

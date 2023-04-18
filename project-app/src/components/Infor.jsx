@@ -13,7 +13,7 @@ export default function Infor() {
       />
       <div className="boxbutton">
         <button
-          className={"inforbutton"}
+          className="inforbutton"
           onClick={() => {
             setIscheck((e) => !e);
           }}
