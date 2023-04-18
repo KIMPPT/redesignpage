@@ -2,7 +2,7 @@ import React from "react";
 import "../CSS/main.css";
 import { useState } from "react";
 export default function Main() {
-  let tax=document.querySelector("#tax"); 
+  let tax=document.querySelectorAll("span"); 
   //let exist=document.querySelector("#exist"); 
   console.log(tax);
   //console.log(exist.childNodes[0]);
