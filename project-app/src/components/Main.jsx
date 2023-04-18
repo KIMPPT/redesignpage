@@ -4,11 +4,23 @@ export default function Main() {
   return (
     <div className="box">
       <div>
-        <img src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/300.png" alt="이미지자리입니다" className="mainimagelarge" />
+        <img
+          src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/300.png"
+          alt="이미지자리입니다"
+          className="mainimagelarge"
+        />
       </div>
       <div className="nav">
-        <img src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/100.png" alt="작은이미지1입니다" className="wrap" />
-        <img src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/100-2.png" alt="작은이미지2입니다" className="wrap" />
+        <img
+          src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/100.png"
+          alt="작은이미지1입니다"
+          className="wrap"
+        />
+        <img
+          src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/100-2.png"
+          alt="작은이미지2입니다"
+          className="wrap"
+        />
       </div>
       <div>
         <table>
@@ -27,11 +39,11 @@ export default function Main() {
             </tr>
             <tr>
               <td>배송비 :</td>
-              <td></td>
+              <td>N개부터 무료</td>
             </tr>
             <tr>
               <td>현재 재고량 :</td>
-              <td></td>
+              <td>M개</td>
             </tr>
             <tr>
               <td>최종 가격 : </td>
@@ -39,6 +51,10 @@ export default function Main() {
             </tr>
           </tbody>
         </table>
+      </div>
+      <div className="buy">
+        <button>보관하기</button>
+        <button>구매하기</button>
       </div>
       <div className="buttons">
         <button>물품 설명</button>

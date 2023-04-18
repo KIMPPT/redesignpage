@@ -4,18 +4,18 @@
   width: 300px;
   height: 300px;
   border: solid 1px black;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .nav {
     position: absolute;
     display:flex;
     justify-content: space-evenly;
     width:500px;
-    top: 45%;
+    bottom:10%;
     left: 5%;
     height:100px;
   }
-.nav>.wrap {
+.wrap {
   border: solid 1px black;
   margin: 0 10px;
   width:100px;
@@ -24,12 +24,15 @@
 }
 table {
   position: relative;
-  right:-70%;
+  right:-60%;
+  margin-top:20px;
 }
 td {
   padding-bottom: 50px;
 }
 .box {
+  position:relative;
+  left:3%;
   height: 550px;
   border: solid 1px black;
   width:90vw;
@@ -41,5 +44,18 @@ td {
   justify-content: space-evenly;
   width:70vw;
   left:10vw;
-  bottom: 42%;
+  bottom: 1%;
+}
+.buy{
+  position:absolute;
+  display:flex;
+  width:300px;
+  justify-content: space-between;
+  right:10%;
+  bottom:10%;
+}
+.buy>button{
+  width:120px;
+  height:50px;
+  font-size:1.2rem;
 }
