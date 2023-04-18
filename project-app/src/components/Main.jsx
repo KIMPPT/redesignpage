@@ -31,15 +31,26 @@ export default function Main() {
             </tr>
             <tr>
               <td>옵션 :</td>
-              <td></td>
+              <td>
+                <select name="" id="">
+                  <option value="">옵션을 선택해주세요</option>
+                  <option value="normal">기본 : 30000원</option>
+                  <option value="option1">기본+추가옵션1 : 35000원</option>
+                </select>
+              </td>
             </tr>
             <tr>
               <td>구매 수량 :</td>
-              <td></td>
+              <td>
+                <input type="number" name="" id="" placeholder="0" min={0} />
+              </td>
             </tr>
             <tr>
               <td>배송비 :</td>
-              <td>N개부터 무료</td>
+              <td>
+                N개 미만 : 3000원 <br />
+                N개 이상 : 무료
+              </td>
             </tr>
             <tr>
               <td>현재 재고량 :</td>
