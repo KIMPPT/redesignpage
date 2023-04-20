@@ -1,12 +1,11 @@
 import React from "react";
 import "../CSS/main.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import DataContext from "../context/DataContext";
 export default function Main() {
-  let tax=document.querySelectorAll("span"); 
-  //let exist=document.querySelector("#exist"); 
-  console.log(tax);
-  //console.log(exist.childNodes[0]);
-  let [choice,setChoice]=useState();
+  let { state, action } = useContext(DataContext);
+  let [choice, setChoice] = useState(0);
+  let choicePrice=()=>{state.price.filter((price)=>price.id==state.count)}
   return (
     <div className="box">
       <div>
@@ -17,13 +16,9 @@ export default function Main() {
         />
       </div>
       <div className="nav">
+        <img src="/image/100-2.png" alt="작은이미지1입니다" className="wrap" />
         <img
-          src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/100.png"
-          alt="작은이미지1입니다"
-          className="wrap"
-        />
-        <img
-          src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/100-2.png"
+          src="/image/100.png"
           alt="작은이미지2입니다"
           className="wrap"
           onClick={() => {}}
@@ -39,10 +34,14 @@ export default function Main() {
             <tr>
               <td>옵션 :</td>
               <td>
-                <select name="" id="">
+                <select
+                  name=""
+                  id=""
+                  onChange={(e) => action.setCount(e.target.value)}
+                >
                   <option value="">옵션을 선택해주세요</option>
-                  <option value="normal">기본 : 30000원</option>
-                  <option value="option1">기본+추가옵션1 : 35000원</option>
+                  <option value="1">기본 : 30000원</option>
+                  <option value="2">기본+추가옵션1 : 35000원</option>
                 </select>
               </td>
             </tr>
@@ -55,7 +54,7 @@ export default function Main() {
                   id=""
                   placeholder="0"
                   min={0}
-                  onChange={(e) => e.target.value}
+                  onChange={(e) => action.setCount(e.target.value)}
                 />
               </td>
             </tr>
@@ -73,8 +72,8 @@ export default function Main() {
               </td>
             </tr>
             <tr>
-              <td>최종 가격 : </td>
-              <td>옵션*구매수량+배송비</td>
+              <td>최종 가격 : state.count-갯수확인</td>
+              <td>{choice}</td>
             </tr>
           </tbody>
         </table>

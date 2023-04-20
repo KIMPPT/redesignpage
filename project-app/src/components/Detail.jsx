@@ -4,7 +4,7 @@ export default function Detail() {
   return (
     <div>
       <img
-        src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/1000500.png"
+        src="/image/1000500.png"
         alt="상세이미지입니다"
         className="detailimage"
       />

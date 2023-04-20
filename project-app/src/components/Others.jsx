@@ -8,7 +8,7 @@ export default function Others() {
         <div>
           <a href="">
             <img
-              src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/50.png"
+              src="/image/50.png"
               alt=""
             />
             <br />
@@ -18,7 +18,7 @@ export default function Others() {
         <div>
           <a href="">
             <img
-              src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/50.png"
+              src="/image/50.png"
               alt=""
             />
             <br />
@@ -28,7 +28,7 @@ export default function Others() {
         <div>
           <a href="">
             <img
-              src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/50.png"
+              src="/image/50.png"
               alt=""
             />
             <br />
