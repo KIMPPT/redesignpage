@@ -1,7 +1,9 @@
 import React from "react";
+import { useRef } from "react";
 export default function Detail() {
+  let ref=useRef(null);
   return (
-    <div>
+    <div  ref={ref} >
       <img
         src="/image/1000500.png"
         alt="상세이미지입니다"
