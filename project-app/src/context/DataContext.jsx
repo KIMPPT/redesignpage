@@ -21,9 +21,23 @@ let DataProvider = ({ children }) => {
     },
   ]);
   let [count,setCount]=useState();
+  let [stock,setStock]=useState(200);
+  let [movego,setMoveto]=useState();
+  let [picture,setPicture]=useState(
+    [
+      {
+        id:1,
+        url:"/image/300.png"
+      },
+      {
+        id:2,
+        url:"/image/300-1.png"
+      }
+    ]
+  )
   let value={
-    state:{price,count},
-    action:{setPrice,setCount},
+    state:{price,count,stock,picture},
+    action:{setPrice,setCount,setStock,setPicture},
   };
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>
 };

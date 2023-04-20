@@ -1,9 +1,9 @@
-import React from "react";
+import React,{ useRef, useState } from "react";
 import "../CSS/infor.css";
-
-import { useState } from "react";
+import useMoveScroll from "./UseMoveScroll";
 export default function Infor() {
   let [ischeck, setIscheck] = useState(false);
+  let {element,onMoveToElement}=useMoveScroll();
   return (
     <div className="inforbox">
       <img

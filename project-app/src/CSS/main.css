@@ -21,6 +21,9 @@
   width:100px;
   height: 100px;
 }
+.wrap:hover{
+  cursor:pointer
+}
 table {
   position: relative;
   right:-60%;
