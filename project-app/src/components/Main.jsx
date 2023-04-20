@@ -11,7 +11,7 @@ export default function Main() {
     <div className="box">
       <div>
         <img
-          src="https://raw.githubusercontent.com/KIMPPT/Project/master/project-app/src/image/300-1.png"
+          src="/image/300.png"
           alt="이미지자리입니다"
           className="mainimagelarge"
         />
