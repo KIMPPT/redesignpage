@@ -38,6 +38,7 @@ td {
   height: 550px;
   border: solid 1px black;
   width:90vw;
+  margin-bottom:20px;
 }
 
 .buttons {

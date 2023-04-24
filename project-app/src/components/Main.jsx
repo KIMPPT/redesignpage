@@ -1,26 +1,40 @@
 import React from "react";
 import "../CSS/main.css";
-import { useState, useContext ,useRef} from "react";
+import { useState, useContext, useRef } from "react";
 import DataContext from "../context/DataContext";
 export default function Main() {
   let { state, action } = useContext(DataContext);
   let [choice, setChoice] = useState(0);
   let [imagenumber, setImagenumber] = useState(1);
   let totalprice =
-    Number(state.count) * state.price.find((price) => price.id == choice).price;
+    Number(state.count) *
+    state.price.find((price) => price.id === Number(choice)).price;
   {
     /*배송비를 제외한 총 가격은 구매 수량 *
     옵션의 id 값과 Dataprovider에 저장된 price의 id 값을 비교해
     해당하는 객체의 price 값을 꺼내서 곱해줌  */
   }
-  let ref=useRef(null);
-  let scrollToRef=()=>{ref.current.scrollIntoView({behavior:"smooth"})}
+  let moveto=state.refmove[0].move;
+  let ref = useRef(null);
+  let ref2 = useRef(null);
+  let ref3 = useRef(null);
+  let scrollToRef = () => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+  let scrollToRef2 = () => {
+    ref2.current.scrollIntoView({ behavior: "smooth" });
+  };
+  let scrollToRef3 = () => {
+    ref3.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className="box" ref={ref}>
       <div>
         <img
-          src={`${(state.picture.find((pic)=>pic.id==imagenumber).url)}`}
-          //이미지 주소를 작은 이미지를 클릭했을 시 id 값을 받아와 
+          src={`${
+            state.picture.find((pic) => Number(pic.id) === imagenumber).url
+          }`}
+          //이미지 주소를 작은 이미지를 클릭했을 시 id 값을 받아와
           //Dataprovide의 큰 이미지 주소가 담긴 id와 비교해
           //일치하는 객체 안의 큰 이미지 주소를 불러냄
           alt="이미지자리입니다"
@@ -28,15 +42,25 @@ export default function Main() {
         />
       </div>
       <div className="nav">
-        <img src="/image/100-2.png" alt="작은이미지1입니다" className="wrap"
-                  onClick={(e) => setImagenumber(1) }/>
+        <img
+          src="/image/100-2.png"
+          alt="작은이미지1입니다"
+          className="wrap"
+          onClick={(e) => setImagenumber(1)}
+        />
         <img
           src="/image/100.png"
           alt="작은이미지2입니다"
           className="wrap"
-          value='2'
-          onClick={(e) => setImagenumber(2)
-          }
+          value="2"
+          onClick={(e) => setImagenumber(2)}
+        />
+        <img
+          src="/image/100-1.png"
+          alt="작은이미지3입니다"
+          className="wrap"
+          value="2"
+          onClick={(e) => setImagenumber(3)}
         />
       </div>
       <div>
@@ -78,8 +102,8 @@ export default function Main() {
             <tr>
               <td>배송비 :</td>
               <td>
-                N개 미만 : <span id="tax">3000</span> 원 <br />
-                N개 이상 : 무료
+                100개 미만 : <span id="tax">3000</span> 원 <br />
+                100개 이상 : 무료
               </td>
             </tr>
             <tr>
@@ -88,11 +112,11 @@ export default function Main() {
                 <span id="exist">200</span>개
               </td>
             </tr>
-            <tr>
+            <tr ref={ref2}>
               <td>최종 가격 :</td>
               <td>
                 {(isNaN(totalprice) ? 0 : totalprice) +
-                  (totalprice != 0 && state.count < 100 ? 3000 : 0)}
+                  (totalprice !== 0 && state.count < 100 ? 3000 : 0)}
               </td>
               {/*옵션이 정해지고 구매 수량도 0보다 클 때 배송비를 포함한 가격을 출력
               그 외의 경우에는 무조건 0원으로 출력 */}
@@ -112,12 +136,10 @@ export default function Main() {
           {state.count > state.stock ? "문의하기" : "구매하기"}
         </button>
       </div>
-      <div className="buttons">
-        <button
-        >물품 설명</button>
-        <button
-        onClick={scrollToRef}>상세 설명</button>
-        <button>관련 물품</button>
+      <div className="buttons" ref={ref3}>
+        <button onClick={scrollToRef}>물품 설명</button>
+        <button onClick={scrollToRef2}>상세 설명</button>
+        <button onClick={scrollToRef3}>관련 물품</button>
       </div>
     </div>
   );

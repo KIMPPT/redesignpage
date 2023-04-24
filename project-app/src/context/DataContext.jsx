@@ -32,12 +32,32 @@ let DataProvider = ({ children }) => {
       {
         id:2,
         url:"/image/300-1.png"
+      },
+      {
+        id:3,
+        url:"/image/300-2.png"
+      }
+    ]
+  )
+  let [refmove,setRefmove]=useState(
+    [
+      {
+        id:1,
+        move:"Infor",
+      },
+      {
+        id:2,
+        move:"Detail",
+      },
+      {
+        id:3,
+        move:"Others",
       }
     ]
   )
   let value={
-    state:{price,count,stock,picture},
-    action:{setPrice,setCount,setStock,setPicture},
+    state:{price,count,stock,picture,refmove},
+    action:{setPrice,setCount,setStock,setPicture,setRefmove},
   };
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>
 };

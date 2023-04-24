@@ -4,9 +4,8 @@ export default function Others() {
   return (
     <div>
       <div className="otherflex">
-        <button className="left go">{`<`}</button>
         <div>
-          <a href="">
+          <a href="/others">
             <img
               src="/image/50.png"
               alt=""
@@ -16,7 +15,7 @@ export default function Others() {
           </a>
         </div>
         <div>
-          <a href="">
+          <a href="/others2">
             <img
               src="/image/50.png"
               alt=""
@@ -26,7 +25,7 @@ export default function Others() {
           </a>
         </div>
         <div>
-          <a href="">
+          <a href="/others3">
             <img
               src="/image/50.png"
               alt=""
@@ -35,12 +34,30 @@ export default function Others() {
             <span>제품4</span>
           </a>
         </div>
-        <button className="right go">{`>`}</button>
+        <div>
+          <a href="/others4">
+            <img
+              src="/image/50.png"
+              alt=""
+            />
+            <br />
+            <span>제품5</span>
+          </a>
+        </div>
       </div>
       <div className="otherbuttons">
-        <button>제품군2</button>
-        <button>제품군3</button>
-        <button>제품군4</button>
+        <a href="/image2">
+        <button
+        >제품군2</button> 
+        </a>
+        <a href="/image3">
+        <button
+        onClick={()=>{}}>제품군3</button>
+        </a>
+        <a href="/image4">
+        <button
+        onClick={()=>{}}>제품군4</button>
+        </a>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import {useRef} from 'react';
 
 function useMoveScroll(){
-    let element=useRef<HTMLDivElement>(null);
+    let element=useRef(null);
     let onMoveToElement=()=>{
         element.current.scrollIntoView({behavior:'sommth', block:'start'})
     } 
