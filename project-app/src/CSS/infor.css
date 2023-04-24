@@ -10,7 +10,7 @@
 }
 .boxbutton{
     position:absolute;
-    bottom:0%;
+    bottom:-1%;
     left:100px;
     width:90%;
     height:50px;
