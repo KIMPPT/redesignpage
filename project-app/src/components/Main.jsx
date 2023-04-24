@@ -28,7 +28,7 @@ export default function Main() {
   let scrollToRef3 = () => {
     ref3.current.scrollIntoView({ behavior: "smooth" });
   };
-  console.log(choice);
+  console.log(typeof(choice));
   return (
     <div className="box" ref={ref}>
       <div>
@@ -80,7 +80,7 @@ export default function Main() {
                   id=""
                   onChange={(e) => setChoice(e.target.value)}
                 >
-                  <option value="">옵션을 선택해주세요</option>
+                  <option value="0">옵션을 선택해주세요</option>
                   <option value="1">기본 : 30000원</option>
                   <option value="2">기본+추가옵션1 : 35000원</option>
                   {/*onchange 함수를 이용해 옵션을 선택에 따라 value 값을 저장함 */}
@@ -97,7 +97,7 @@ export default function Main() {
                   placeholder="0"
                   min={0}
                   onChange={(e) => action.setCount(e.target.value)}
-                  disabled={choice==0?true:false}
+                  disabled={Number(choice)===0?true:false}
                   //옵션을 기존으로 돌리면 구매 수량을 수정 못하게 하기
                 />
                 {/*구매 수량을 실시간으로 변화 시켜줌 */}
@@ -143,13 +143,13 @@ export default function Main() {
       </div>
       <div className="buttons" ref={ref3}>
         <Link to="1" spy={true} smooth={true}>
-          <span>물품 설명</span>
+          <button className="moreinfor">물품 설명</button>
         </Link>
         <Link to="2" spy={true} smooth={true}>
-          <span>상세 설명</span>
+          <button className="moreinfor">상세 설명</button>
         </Link>
         <Link to="3" spy={true} smooth={true}>
-          <span>관련 물품</span>
+          <button className="moreinfor">관련 물품</button>
         </Link>
         {/*
         <button onClick={scrollToRef}>물품 설명</button>

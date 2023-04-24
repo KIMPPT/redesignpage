@@ -11,7 +11,7 @@
     display:flex;
     justify-content: space-evenly;
     width:500px;
-    bottom:10%;
+    bottom:15%;
     left: 5%;
     height:100px;
   }
@@ -55,10 +55,15 @@ td {
   width:300px;
   justify-content: space-between;
   right:10%;
-  bottom:7%;
+  bottom:15%;
 }
 .buy>button{
   width:120px;
   height:50px;
   font-size:1.2rem;
+}
+.moreinfor:hover{
+  background-color: black;
+  color:white;
+  transition:all 0.5s;
 }
