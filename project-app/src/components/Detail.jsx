@@ -9,9 +9,9 @@ export default function Detail() {
   console.log(goto)
   let ref=useRef(null);
     return (
-      <div ref={ref}>
+      <div ref={ref} id="2">
         <img
-          src="/image/1000500.png"
+          src="/image/1000700.png"
           alt="상세이미지입니다"
           className="detailimage"
         />

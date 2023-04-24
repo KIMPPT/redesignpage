@@ -1,6 +1,7 @@
 import React from "react";
 import "../CSS/main.css";
 import { useState, useContext, useRef } from "react";
+import {Link} from "react-scroll"
 import DataContext from "../context/DataContext";
 export default function Main() {
   let { state, action } = useContext(DataContext);
@@ -27,6 +28,7 @@ export default function Main() {
   let scrollToRef3 = () => {
     ref3.current.scrollIntoView({ behavior: "smooth" });
   };
+  console.log(choice);
   return (
     <div className="box" ref={ref}>
       <div>
@@ -43,20 +45,20 @@ export default function Main() {
       </div>
       <div className="nav">
         <img
-          src="/image/100-2.png"
+          src="/image/100.png"
           alt="작은이미지1입니다"
           className="wrap"
           onClick={(e) => setImagenumber(1)}
         />
         <img
-          src="/image/100.png"
+          src="/image/100-1.png"
           alt="작은이미지2입니다"
           className="wrap"
           value="2"
           onClick={(e) => setImagenumber(2)}
         />
         <img
-          src="/image/100-1.png"
+          src="/image/100-2.png"
           alt="작은이미지3입니다"
           className="wrap"
           value="2"
@@ -95,6 +97,8 @@ export default function Main() {
                   placeholder="0"
                   min={0}
                   onChange={(e) => action.setCount(e.target.value)}
+                  disabled={choice==0?true:false}
+                  //옵션을 기존으로 돌리면 구매 수량을 수정 못하게 하기
                 />
                 {/*구매 수량을 실시간으로 변화 시켜줌 */}
               </td>
@@ -117,6 +121,7 @@ export default function Main() {
               <td>
                 {(isNaN(totalprice) ? 0 : totalprice) +
                   (totalprice !== 0 && state.count < 100 ? 3000 : 0)}
+                  원
               </td>
               {/*옵션이 정해지고 구매 수량도 0보다 클 때 배송비를 포함한 가격을 출력
               그 외의 경우에는 무조건 0원으로 출력 */}
@@ -137,9 +142,20 @@ export default function Main() {
         </button>
       </div>
       <div className="buttons" ref={ref3}>
+        <Link to="1" spy={true} smooth={true}>
+          <span>물품 설명</span>
+        </Link>
+        <Link to="2" spy={true} smooth={true}>
+          <span>상세 설명</span>
+        </Link>
+        <Link to="3" spy={true} smooth={true}>
+          <span>관련 물품</span>
+        </Link>
+        {/*
         <button onClick={scrollToRef}>물품 설명</button>
         <button onClick={scrollToRef2}>상세 설명</button>
         <button onClick={scrollToRef3}>관련 물품</button>
+        */}
       </div>
     </div>
   );
