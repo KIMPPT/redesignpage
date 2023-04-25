@@ -1,8 +1,10 @@
 import React from "react";
 import "../CSS/main.css";
-import { useState, useContext} from "react";
+import { useState, useContext } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import DataContext from "../context/DataContext";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Main(props) {
   let { state, action } = useContext(DataContext);
   let [choice, setChoice] = useState(0);
@@ -10,16 +12,33 @@ export default function Main(props) {
   let totalprice =
     Number(state.count) *
     state.price.find((price) => price.id === Number(choice)).price;
-  
-    /*배송비를 제외한 총 가격은 구매 수량 *
+  let finalprice=
+  (isNaN(totalprice) ? 0 : totalprice) +
+    (totalprice !== 0 && state.count < 100 ? 3000 : 0);
+  /*배송비를 제외한 총 가격은 구매 수량 *
     옵션의 id 값과 Dataprovider에 저장된 price의 id 값을 비교해
     해당하는 객체의 price 값을 꺼내서 곱해줌  */
-  
-  console.log(typeof choice);
-  console.log(props)
+  let navigate = useNavigate();
+  let cashbutton = () => {
+    state.count > state.stock
+      ? alert("재고량 보다 많으므로 123-5678 로 문의해주십시오")
+      : alert("결제 페이지로 갑니다");
+    navigate("/cash");
+  };
+  let addinfor=()=>{
+    let newinfor={
+      id:state.id+1,
+      name:state.price[choice].title,
+      choice:state.count,
+      price:state.price[choice].price,
+    }
+    action.setChoiceprice(newinfor);
+    action.setId(state.id+1);
+    alert("보관하였습니다");
+    navigate("/bucket");
+  }
   return (
-    <div className="box"
-    >
+    <div className="box">
       <div>
         <img
           src={`${
@@ -108,8 +127,7 @@ export default function Main(props) {
             <tr>
               <td>최종 가격 :</td>
               <td>
-                {(isNaN(totalprice) ? 0 : totalprice) +
-                  (totalprice !== 0 && state.count < 100 ? 3000 : 0)}
+          {finalprice}
                 원
               </td>
               {/*옵션이 정해지고 구매 수량도 0보다 클 때 배송비를 포함한 가격을 출력
@@ -120,13 +138,15 @@ export default function Main(props) {
       </div>
       <div className="buy">
         <button
-          onClick={() => {
-            alert("보관하였습니다");
-          }}
+          onClick={addinfor}
         >
           보관하기
         </button>
-        <button onClick={() => {}}>
+        <button
+          onClick={() => {
+            cashbutton();
+          }}
+        >
           {state.count > state.stock ? "문의하기" : "구매하기"}
         </button>
       </div>
