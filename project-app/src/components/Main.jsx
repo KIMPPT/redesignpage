@@ -1,36 +1,25 @@
 import React from "react";
 import "../CSS/main.css";
-import { useState, useContext, useRef } from "react";
-import {Link} from "react-scroll"
+import { useState, useContext} from "react";
+import { Link as ScrollLink } from "react-scroll";
 import DataContext from "../context/DataContext";
-export default function Main() {
+export default function Main(props) {
   let { state, action } = useContext(DataContext);
   let [choice, setChoice] = useState(0);
   let [imagenumber, setImagenumber] = useState(1);
   let totalprice =
     Number(state.count) *
     state.price.find((price) => price.id === Number(choice)).price;
-  {
+  
     /*배송비를 제외한 총 가격은 구매 수량 *
     옵션의 id 값과 Dataprovider에 저장된 price의 id 값을 비교해
     해당하는 객체의 price 값을 꺼내서 곱해줌  */
-  }
-  let moveto=state.refmove[0].move;
-  let ref = useRef(null);
-  let ref2 = useRef(null);
-  let ref3 = useRef(null);
-  let scrollToRef = () => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
-  };
-  let scrollToRef2 = () => {
-    ref2.current.scrollIntoView({ behavior: "smooth" });
-  };
-  let scrollToRef3 = () => {
-    ref3.current.scrollIntoView({ behavior: "smooth" });
-  };
-  console.log(typeof(choice));
+  
+  console.log(typeof choice);
+  console.log(props)
   return (
-    <div className="box" ref={ref}>
+    <div className="box"
+    >
       <div>
         <img
           src={`${
@@ -97,7 +86,7 @@ export default function Main() {
                   placeholder="0"
                   min={0}
                   onChange={(e) => action.setCount(e.target.value)}
-                  disabled={Number(choice)===0?true:false}
+                  disabled={Number(choice) === 0 ? true : false}
                   //옵션을 기존으로 돌리면 구매 수량을 수정 못하게 하기
                 />
                 {/*구매 수량을 실시간으로 변화 시켜줌 */}
@@ -116,12 +105,12 @@ export default function Main() {
                 <span id="exist">200</span>개
               </td>
             </tr>
-            <tr ref={ref2}>
+            <tr>
               <td>최종 가격 :</td>
               <td>
                 {(isNaN(totalprice) ? 0 : totalprice) +
                   (totalprice !== 0 && state.count < 100 ? 3000 : 0)}
-                  원
+                원
               </td>
               {/*옵션이 정해지고 구매 수량도 0보다 클 때 배송비를 포함한 가격을 출력
               그 외의 경우에는 무조건 0원으로 출력 */}
@@ -141,21 +130,16 @@ export default function Main() {
           {state.count > state.stock ? "문의하기" : "구매하기"}
         </button>
       </div>
-      <div className="buttons" ref={ref3}>
-        <Link to="1" spy={true} smooth={true}>
+      <div className="buttons">
+        <ScrollLink to="1" spy={true} smooth={true}>
           <button className="moreinfor">물품 설명</button>
-        </Link>
-        <Link to="2" spy={true} smooth={true}>
+        </ScrollLink>
+        <ScrollLink to="2" spy={true} smooth={true}>
           <button className="moreinfor">상세 설명</button>
-        </Link>
-        <Link to="3" spy={true} smooth={true}>
+        </ScrollLink>
+        <ScrollLink to="3" spy={true} smooth={true}>
           <button className="moreinfor">관련 물품</button>
-        </Link>
-        {/*
-        <button onClick={scrollToRef}>물품 설명</button>
-        <button onClick={scrollToRef2}>상세 설명</button>
-        <button onClick={scrollToRef3}>관련 물품</button>
-        */}
+        </ScrollLink>
       </div>
     </div>
   );

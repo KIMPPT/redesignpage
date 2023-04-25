@@ -5,11 +5,11 @@ import Detail from "../components/Detail";
 import Others from "../components/Others";
 
 export default function Home() {
-  
   return (
     <div>
       Home
-      <Main />
+      <Main 
+      />
       <Infor />
       <Detail />
       <Others />
