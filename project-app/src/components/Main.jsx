@@ -53,20 +53,20 @@ export default function Main(props) {
       </div>
       <div className="nav">
         <img
-          src="/image/100.png"
+          src="/image/small1.jpg"
           alt="작은이미지1입니다"
           className="wrap"
           onClick={(e) => setImagenumber(1)}
         />
         <img
-          src="/image/100-1.png"
+          src="/image/small2.jpg"
           alt="작은이미지2입니다"
           className="wrap"
           value="2"
           onClick={(e) => setImagenumber(2)}
         />
         <img
-          src="/image/100-2.png"
+          src="/image/small3.png"
           alt="작은이미지3입니다"
           className="wrap"
           value="2"

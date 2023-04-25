@@ -5,9 +5,10 @@ export default function Infor() {
   return (
     <div className="inforbox" id="1" >
       <img
-        src="/image/10002000.png"
+        src="/image/longimage.jpg"
         alt="제품홍보사진칸입니다."
         className={ischeck?"inforimg":"inforimg on"}
+        style={{width:'70%'}}
       />
       <div className="boxbutton">
         <button

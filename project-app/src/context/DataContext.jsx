@@ -27,15 +27,15 @@ let DataProvider = ({ children }) => {
     [
       {
         id:1,
-        url:"/image/300.png"
+        url:"/image/large1.jpg"
       },
       {
         id:2,
-        url:"/image/300-1.png"
+        url:"/image/large2.jpg"
       },
       {
         id:3,
-        url:"/image/300-2.png"
+        url:"/image/large3.png"
       }
     ]
   )
