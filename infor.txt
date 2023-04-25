@@ -5,3 +5,11 @@ https://zih0.tistory.com/16
 react-scroll 을 설치해서 동작을 일단 확인함
 위의 기능을 쓰지 않고 사용하는 방법도 익혀놓으면 좋을거 같음
 https://developer0809.tistory.com/138
+
+단색 이미지 대신 채워줄 이미지 대체
+
+물품명 추가
+
+보관하기 페이지,구매하기 페이지 연결 *
+
+usenavigate로 연결 또는 context에 값 담아서 연결

@@ -56,12 +56,14 @@ let DataProvider = ({ children }) => {
     ]
   )
   let [choiceprice,setChoiceprice]=useState(
-    {
-      id:0,
-      choice:0,
-      price:0,
-      name:"",
-    }
+    [
+      {
+        id:0,
+        choice:0,
+        price:0,
+        name:"",
+      }
+    ]
   )
   let [id,setId]=useState(0);
   let value={
