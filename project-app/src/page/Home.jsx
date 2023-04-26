@@ -7,7 +7,6 @@ import Others from "../components/Others";
 export default function Home() {
   return (
     <div>
-      Home
       <Main />
       <Infor />
       <Detail />
