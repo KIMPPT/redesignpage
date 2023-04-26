@@ -179,9 +179,9 @@ export default function Main(props) {
           <button className="moreinfor">관련 물품</button>
         </ScrollLink>
       </div>
-      {/* top으로 가는 버튼인데 현재 작동을 하다 말았다 하므로 보류
-      <button className="topbutton">top</button>
-      */}
+      <button className="topbutton"
+      onClick={onTopRef}>top</button>
+      
     </div>
   );
 }
