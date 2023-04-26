@@ -20,6 +20,14 @@ export default function Main(props) {
     해당하는 객체의 price 값을 꺼내서 곱해줌  */
   let navigate = useNavigate();
   let cashbutton = () => {
+    let newinfor={
+      id:state.id+1,
+      name:state.price[choice].title,
+      choice:state.count,
+      price:state.price[choice].price,
+    }
+    action.setChoiceprice(newinfor);
+    action.setId(state.id+1);
     state.count > state.stock
       ? alert("재고량 보다 많으므로 123-5678 로 문의해주십시오")
       : alert("결제 페이지로 갑니다");
@@ -32,8 +40,10 @@ export default function Main(props) {
       choice:state.count,
       price:state.price[choice].price,
     }
-    action.setChoiceprice(newinfor);
     action.setId(state.id+1);
+    let newaddinfor=state.choiceprice.concat(newinfor);
+    let deleteinfor=newaddinfor.filter((list)=>list.id!==0);
+    action.setChoiceprice(deleteinfor);
     alert("보관하였습니다");
     navigate("/bucket");
   }

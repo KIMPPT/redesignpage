@@ -4,7 +4,7 @@ export default function Detail() {
   return (
     <div id="2">
       <img
-        src="/image/1000700.png"
+        src="/image/detail.png"
         alt="상세이미지입니다"
         className="detailimage"
       />

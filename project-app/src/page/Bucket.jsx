@@ -1,14 +1,21 @@
-import React from 'react'
-import { useContext } from 'react'
-import DataContext from '../context/DataContext'
+import React from "react";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 export default function Bucket() {
-    let {state}=useContext(DataContext)
+  let { state, action } = useContext(DataContext);
+  let deletelist = () => {
+    let newlist = state.choiceprice.filter((list) => list.id !== 0);
+    action.setChoiceprice(newlist);
+  };
   return (
     <div>
-        <h3>id : {state.choiceprice.id}</h3>
-     <h3>이름 : {state.choiceprice.name}     </h3>
-     <h3>가격 : {state.choiceprice.price}     </h3>
-     <h3>갯수 : {state.choiceprice.choice}     </h3>
+      {state.choiceprice.map((list, id) => (
+        <div key={id}>
+          <p>
+            {list.id}/{list.choice}/{list.price}/{list.name}
+          </p>
         </div>
-  )
+      ))}
+    </div>
+  );
 }
