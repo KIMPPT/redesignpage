@@ -6,7 +6,7 @@ table {
 
 td {
   padding-bottom: 30px;
-  font-size:1.1rem;
+  font-size: 1.1rem;
 }
 
 .box {
@@ -104,4 +104,15 @@ button:hover {
   background-color: black;
   color: white;
   transition: all 0.5s;
+}
+
+.topbutton {
+  position: fixed;
+  z-index: 1;
+  right: 5%;
+  bottom: 10%;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  border: none;
+  padding: 5px 10px;
 }

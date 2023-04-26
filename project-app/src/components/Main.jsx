@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../CSS/main.css";
 import { useState, useContext } from "react";
 import { Link as ScrollLink } from "react-scroll";
@@ -48,8 +48,12 @@ export default function Main(props) {
     alert("보관하였습니다");
     navigate("/bucket");
   };
+  let topRef = useRef(null);
+  let onTopRef = () => {
+    topRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
-    <div className="box">
+    <div className="box" ref={topRef}>
       <div>
         <img
           src={`${
@@ -175,6 +179,9 @@ export default function Main(props) {
           <button className="moreinfor">관련 물품</button>
         </ScrollLink>
       </div>
+      {/* top으로 가는 버튼인데 현재 작동을 하다 말았다 하므로 보류
+      <button className="topbutton">top</button>
+      */}
     </div>
   );
 }
