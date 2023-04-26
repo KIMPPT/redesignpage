@@ -11,43 +11,43 @@ export default function Main(props) {
   let totalprice =
     Number(state.count) *
     state.price.find((price) => price.id === Number(choice)).price;
-  let finalprice=
-  (isNaN(totalprice) ? 0 : totalprice) +
+  let finalprice =
+    (isNaN(totalprice) ? 0 : totalprice) +
     (totalprice !== 0 && state.count < 100 ? 3000 : 0);
   /*배송비를 제외한 총 가격은 구매 수량 *
     옵션의 id 값과 Dataprovider에 저장된 price의 id 값을 비교해
     해당하는 객체의 price 값을 꺼내서 곱해줌  */
   let navigate = useNavigate();
   let cashbutton = () => {
-    let newinfor={
-      id:state.id+1,
-      name:state.price[choice].title,
-      choice:state.count,
-      price:state.price[choice].price,
-      allprice:finalprice,
-    }
+    let newinfor = {
+      id: state.id + 1,
+      name: state.price[choice].title,
+      choice: state.count,
+      price: state.price[choice].price,
+      allprice: finalprice,
+    };
     action.setLastchoice(newinfor);
-    action.setId(state.id+1);
+    action.setId(state.id + 1);
     state.count > state.stock
       ? alert("재고량 보다 많으므로 123-5678 로 문의해주십시오")
       : alert("결제 페이지로 갑니다");
     navigate("/cash");
   };
-  let addinfor=()=>{
-    let newinfor={
-      id:state.id+1,
-      name:state.price[choice].title,
-      choice:state.count,
-      price:state.price[choice].price,
-      allprice:finalprice,
-    }
-    action.setId(state.id+1);
-    let newaddinfor=state.choiceprice.concat(newinfor);
-    let deleteinfor=newaddinfor.filter((list)=>list.id!==0);
+  let addinfor = () => {
+    let newinfor = {
+      id: state.id + 1,
+      name: state.price[choice].title,
+      choice: state.count,
+      price: state.price[choice].price,
+      allprice: finalprice,
+    };
+    action.setId(state.id + 1);
+    let newaddinfor = state.choiceprice.concat(newinfor);
+    let deleteinfor = newaddinfor.filter((list) => list.id !== 0);
     action.setChoiceprice(deleteinfor);
     alert("보관하였습니다");
     navigate("/bucket");
-  }
+  };
   return (
     <div className="box">
       <div>
@@ -137,10 +137,7 @@ export default function Main(props) {
             </tr>
             <tr>
               <td>최종 가격 :</td>
-              <td>
-          {finalprice}
-                원
-              </td>
+              <td>{finalprice}원</td>
               {/*옵션이 정해지고 구매 수량도 0보다 클 때 배송비를 포함한 가격을 출력
               그 외의 경우에는 무조건 0원으로 출력 */}
             </tr>
@@ -149,15 +146,19 @@ export default function Main(props) {
       </div>
       <div className="buy">
         <button
-          onClick={addinfor}
+          onClick={() => {
+            finalprice !== 0 ? addinfor() : alert("옵션과수량을 선택해주세요");
+          }}
           className="existbutton"
         >
           보관하기
         </button>
         <button
-                  className="buybutton"
+          className="buybutton"
           onClick={() => {
-            cashbutton();
+            finalprice !== 0
+              ? cashbutton()
+              : alert("옵션과수량을 선택해주세요");
           }}
         >
           {state.count > state.stock ? "문의하기" : "구매하기"}

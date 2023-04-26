@@ -22,7 +22,6 @@ let DataProvider = ({ children }) => {
   ]);
   let [count,setCount]=useState();
   let [stock,setStock]=useState(200);
-  let [movego,setMoveto]=useState();
   let [picture,setPicture]=useState(
     [
       {
@@ -36,22 +35,6 @@ let DataProvider = ({ children }) => {
       {
         id:3,
         url:"/image/large3.png"
-      }
-    ]
-  )
-  let [refmove,setRefmove]=useState(
-    [
-      {
-        id:1,
-        move:"Infor",
-      },
-      {
-        id:2,
-        move:"Detail",
-      },
-      {
-        id:3,
-        move:"Others",
       }
     ]
   )
@@ -77,8 +60,8 @@ let DataProvider = ({ children }) => {
   )
   let [id,setId]=useState(0);
   let value={
-    state:{price,count,stock,picture,refmove,choiceprice,id,lastchoice},
-    action:{setPrice,setCount,setStock,setPicture,setRefmove,setChoiceprice,setId,setLastchoice},
+    state:{price,count,stock,picture,choiceprice,id,lastchoice},
+    action:{setPrice,setCount,setStock,setPicture,setChoiceprice,setId,setLastchoice},
   };
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>
 };
