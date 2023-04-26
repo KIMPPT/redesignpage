@@ -179,9 +179,9 @@ export default function Main(props) {
           <button className="moreinfor">관련 물품</button>
         </ScrollLink>
       </div>
-      <button className="topbutton"
+      <button className="topbutton cansee"
       onClick={onTopRef}>top</button>
-      
+      {console.log(window.scrollY)}
     </div>
   );
 }

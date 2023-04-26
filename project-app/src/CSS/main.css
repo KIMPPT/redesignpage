@@ -117,3 +117,6 @@ button:hover {
   padding: 5px 10px;
   background-color: aqua;
 }
+.cansee{
+  display:block;
+}
