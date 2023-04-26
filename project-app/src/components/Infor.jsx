@@ -4,12 +4,14 @@ export default function Infor() {
   let [ischeck, setIscheck] = useState(false);
   return (
     <div className="inforbox" id="1" >
+      <div className={ischeck?"imagebox":"imagebox on"}>
       <img
         src="/image/longimage.jpg"
         alt="제품홍보사진칸입니다."
-        className={ischeck?"inforimg":"inforimg on"}
+        className="inforimg"
         style={{width:'70%'}}
       />
+      </div>
       <div className="boxbutton">
         <button
           className="inforbutton"
