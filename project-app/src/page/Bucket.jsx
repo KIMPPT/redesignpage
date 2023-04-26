@@ -12,7 +12,11 @@ export default function Bucket() {
       {state.choiceprice.map((list, id) => (
         <div key={id}>
           <p>
-            {list.id}/{list.choice}/{list.price}/{list.name}
+            {list.id} <br />
+            갯수 : {list.choice} <br /> 
+            가격 : {list.price} <br /> 
+            옵션 : {list.name} <br/>
+            최종 가격 : {list.allprice}
           </p>
         </div>
       ))}

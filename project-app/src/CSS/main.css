@@ -6,64 +6,87 @@
   border: solid 1px black;
   margin-top: 20px;
 }
+
 .nav {
-    position: absolute;
-    display:flex;
-    justify-content: space-evenly;
-    width:500px;
-    bottom:15%;
-    left: 5%;
-    height:100px;
-  }
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  width: 500px;
+  bottom: 15%;
+  left: 5%;
+  height: 100px;
+}
+
 .wrap {
   border: solid 1px black;
   margin: 0 10px;
-  width:100px;
+  width: 100px;
   height: 100px;
 }
-.wrap:hover{
-  cursor:pointer
+
+.wrap:hover {
+  cursor: pointer
 }
+
 table {
   position: relative;
-  right:-60%;
-  margin-top:40px;
+  right: -60%;
+  margin-top: 40px;
 }
+
 td {
   padding-bottom: 30px;
 }
+
 .box {
-  position:relative;
-  left:3%;
+  position: relative;
+  left: 3%;
   height: 550px;
   border: solid 1px black;
-  width:90vw;
-  margin-bottom:20px;
+  width: 90vw;
+  margin-bottom: 20px;
 }
 
 .buttons {
   position: absolute;
-  display:flex;
+  display: flex;
   justify-content: space-evenly;
-  width:70vw;
-  left:10vw;
+  width: 70vw;
+  left: 10vw;
   bottom: 1%;
 }
-.buy{
-  position:absolute;
-  display:flex;
-  width:300px;
+
+.buy {
+  position: absolute;
+  display: flex;
+  width: 300px;
   justify-content: space-between;
-  right:10%;
-  bottom:15%;
+  right: 10%;
+  bottom: 15%;
 }
-.buy>button{
-  width:120px;
-  height:50px;
-  font-size:1.2rem;
+
+.buy>button {
+  width: 120px;
+  height: 50px;
+  font-size: 1.2rem;
 }
-.moreinfor:hover{
+
+.moreinfor:hover {
   background-color: black;
+  color: white;
+  transition: all 0.5s;
+}
+button:hover{
+  cursor:pointer
+}
+.existbutton, .buybutton{
+  border-radius:50px;
+  border:none;
+  background-color:rgba(0,0,255,0.5);
   color:white;
+  font-weight:bold;
+}
+.existbutton:hover, .buybutton:hover{
+  background-color:blue;
   transition:all 0.5s;
 }

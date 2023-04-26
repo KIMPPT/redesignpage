@@ -39,6 +39,7 @@ export default function Main(props) {
       name:state.price[choice].title,
       choice:state.count,
       price:state.price[choice].price,
+      allprice:finalprice,
     }
     action.setId(state.id+1);
     let newaddinfor=state.choiceprice.concat(newinfor);
@@ -88,7 +89,7 @@ export default function Main(props) {
           <tbody>
             <tr>
               <td>물품이름 :</td>
-              <td>물품명</td>
+              <td>철사</td>
             </tr>
             <tr>
               <td>옵션 :</td>
@@ -149,10 +150,12 @@ export default function Main(props) {
       <div className="buy">
         <button
           onClick={addinfor}
+          className="existbutton"
         >
           보관하기
         </button>
         <button
+                  className="buybutton"
           onClick={() => {
             cashbutton();
           }}
