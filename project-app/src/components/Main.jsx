@@ -3,7 +3,6 @@ import "../CSS/main.css";
 import { useState, useContext } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import DataContext from "../context/DataContext";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 export default function Main(props) {
   let { state, action } = useContext(DataContext);
@@ -25,8 +24,9 @@ export default function Main(props) {
       name:state.price[choice].title,
       choice:state.count,
       price:state.price[choice].price,
+      allprice:finalprice,
     }
-    action.setChoiceprice(newinfor);
+    action.setLastchoice(newinfor);
     action.setId(state.id+1);
     state.count > state.stock
       ? alert("재고량 보다 많으므로 123-5678 로 문의해주십시오")

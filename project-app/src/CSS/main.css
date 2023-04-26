@@ -1,3 +1,23 @@
+table {
+  position: relative;
+  right: -60%;
+  margin-top: 40px;
+}
+
+td {
+  padding-bottom: 30px;
+}
+
+.box {
+  position: relative;
+  left: 3%;
+  height: 550px;
+  border: solid 1px black;
+  width: 90vw;
+  margin-bottom: 20px;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+
 .mainimagelarge {
   position: absolute;
   left: 15%;
@@ -28,33 +48,6 @@
   cursor: pointer
 }
 
-table {
-  position: relative;
-  right: -60%;
-  margin-top: 40px;
-}
-
-td {
-  padding-bottom: 30px;
-}
-
-.box {
-  position: relative;
-  left: 3%;
-  height: 550px;
-  border: solid 1px black;
-  width: 90vw;
-  margin-bottom: 20px;
-}
-
-.buttons {
-  position: absolute;
-  display: flex;
-  justify-content: space-evenly;
-  width: 70vw;
-  left: 10vw;
-  bottom: 1%;
-}
 
 .buy {
   position: absolute;
@@ -71,22 +64,44 @@ td {
   font-size: 1.2rem;
 }
 
+button:hover {
+  cursor: pointer
+}
+
+.existbutton,
+.buybutton {
+  border-radius: 50px;
+  border: none;
+  background-color: rgba(0, 0, 255, 0.5);
+  color: white;
+  font-weight: bold;
+}
+
+.existbutton:hover,
+.buybutton:hover {
+  background-color: blue;
+  transition: all 0.5s;
+}
+
+.buttons {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  width: 70vw;
+  left: 10vw;
+  bottom: 1%;
+}
+
+.moreinfor {
+  font-size: 1.2rem;
+  border-radius: 20px;
+  border: none;
+  margin-bottom: 10px;
+  padding: 5px 5px;
+}
+
 .moreinfor:hover {
   background-color: black;
   color: white;
   transition: all 0.5s;
-}
-button:hover{
-  cursor:pointer
-}
-.existbutton, .buybutton{
-  border-radius:50px;
-  border:none;
-  background-color:rgba(0,0,255,0.5);
-  color:white;
-  font-weight:bold;
-}
-.existbutton:hover, .buybutton:hover{
-  background-color:blue;
-  transition:all 0.5s;
 }

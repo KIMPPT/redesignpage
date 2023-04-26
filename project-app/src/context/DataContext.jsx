@@ -62,13 +62,23 @@ let DataProvider = ({ children }) => {
         choice:0,
         price:0,
         name:"",
+        allprice:0,
       }
     ]
   )
+  let [lastchoice,setLastchoice]=useState(
+    {
+      id:0,
+      choice:0,
+      price:0,
+      name:"",
+      allprice:0,
+    }
+  )
   let [id,setId]=useState(0);
   let value={
-    state:{price,count,stock,picture,refmove,choiceprice,id},
-    action:{setPrice,setCount,setStock,setPicture,setRefmove,setChoiceprice,setId},
+    state:{price,count,stock,picture,refmove,choiceprice,id,lastchoice},
+    action:{setPrice,setCount,setStock,setPicture,setRefmove,setChoiceprice,setId,setLastchoice},
   };
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>
 };

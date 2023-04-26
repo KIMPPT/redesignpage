@@ -15,3 +15,9 @@ https://developer0809.tistory.com/138
 usenavigate로 연결 또는 context에 값 담아서 연결
 
 detail 부분 이미지 : https://www.koswire.com/product/koswire.asp
+
+구매하기 버튼을 누르면 가장 마지막에 선택한 옵션과 가격에 대해서만 나와야함.
+장바구니에는 들어가지지 않음
+
+보관하기 버튼을 누르면 계속해서 누적으로 쌓임
+일단 일괄 구매하기 버튼은 생성하지 않음
