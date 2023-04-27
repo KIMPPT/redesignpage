@@ -10,13 +10,6 @@ export default function Bucket() {
     action.setChoiceprice(newlist);
   };
   let sumprice = 0;
-  useEffect(() => {
-    if (state.choiceprice[0].choice === 0) {
-      alert("빈 장바구니입니다");
-      //Invalid hook call. 에러가 발생함
-      navigate("/item");
-    }
-  }, []);
   let onlypricelist = state.choiceprice.map(
     (list) => (sumprice += list.allprice)
   );

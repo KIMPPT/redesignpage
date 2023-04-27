@@ -6,12 +6,6 @@ export default function Cash() {
   let { state } = useContext(DataContext);
   let onechoice = state.lastchoice;
   let navigate = useNavigate();
-  useEffect(() => {
-    if (onechoice.allprice === 0) {
-      alert("선택하지 않았습니다");
-      navigate(-1);
-    }
-  }, []);
   return (
     <div>
       <h1>단일 구매페이지 입니다</h1>
