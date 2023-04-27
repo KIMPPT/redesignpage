@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "../CSS/main.css";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import DataContext from "../context/DataContext";
 import { useNavigate } from "react-router-dom";
@@ -52,6 +52,22 @@ export default function Main(props) {
   let onTopRef = () => {
     topRef.current.scrollIntoView({ behavior: "smooth" });
   };
+  {
+    /*
+  스크롤 값 가져오기 메서드인데 쓰지 않아서 주석처리
+  const [position, setPosition] = useState(0);
+  function onScroll() {
+    setPosition(window.scrollY);
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+  console.log(position);
+*/
+  }
   return (
     <div className="box" ref={topRef}>
       <div>
@@ -179,8 +195,9 @@ export default function Main(props) {
           <button className="moreinfor">관련 물품</button>
         </ScrollLink>
       </div>
-      <button className="topbutton cansee"
-      onClick={onTopRef}>top</button>
+      <button className="topbutton" onClick={onTopRef}>
+        top
+      </button>
       {/*console.log(window.scrollY)*/}
     </div>
   );
