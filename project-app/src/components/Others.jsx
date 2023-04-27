@@ -1,6 +1,8 @@
 import React from "react";
 import "../CSS/others.css";
+import { useNavigate } from "react-router-dom";
 export default function Others() {
+  let navigate=useNavigate();
   return (
     <div>
       <div className="otherflex" id="3">

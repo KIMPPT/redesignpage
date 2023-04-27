@@ -1,16 +1,26 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import DataContext from "../context/DataContext";
 export default function Bucket() {
+  let navigate = useNavigate();
   let { state, action } = useContext(DataContext);
   let deleitethatlist = (e) => {
     let newlist = state.choiceprice.filter((list) => list.id !== e);
     action.setChoiceprice(newlist);
   };
   let sumprice = 0;
+  useEffect(() => {
+    if (state.choiceprice[0].choice === 0) {
+      alert("빈 장바구니입니다");
+      //Invalid hook call. 에러가 발생함
+      navigate("/item");
+    }
+  }, []);
   let onlypricelist = state.choiceprice.map(
     (list) => (sumprice += list.allprice)
   );
+
   //console.log(onlypricelist)
   return (
     <div>

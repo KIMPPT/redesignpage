@@ -181,7 +181,7 @@ export default function Main(props) {
       </div>
       <button className="topbutton cansee"
       onClick={onTopRef}>top</button>
-      {console.log(window.scrollY)}
+      {/*console.log(window.scrollY)*/}
     </div>
   );
 }

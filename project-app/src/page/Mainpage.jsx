@@ -5,7 +5,7 @@ export default function Mainpage() {
   return (
     <div>
         <h1>Mainpage 입니다</h1>
-    <Link to="/item">
+    <Link to="/item1">
         <button
         className='product1'>제품1</button>
     </Link>
