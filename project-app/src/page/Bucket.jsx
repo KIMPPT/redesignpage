@@ -2,6 +2,7 @@ import React from "react";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../context/DataContext";
+import '../CSS/bucket.css'
 export default function Bucket() {
   let navigate = useNavigate();
   let { state, action } = useContext(DataContext);
@@ -21,16 +22,30 @@ export default function Bucket() {
       <h3>총 가격 : {sumprice}원 입니다</h3>
       {state.choiceprice.map((list, id) => (
         <div key={id}>
-          <p>
+          <table className="bucketTable">
+            <tbody>
+              <tr className="bucketTr">
+                <td>
+                옵션 : {list.name}
+                </td>
+                <td>
+                단가 : {list.price}
+                </td>
+                <td>
+                갯수 : {list.choice}
+                </td>
+                <td>
+                최종 가격 : {list.allprice}
+                </td>
+                <td>
+                <button onClick={() => deleitethatlist(list.id)}>삭제</button>
+                </td>
+              </tr>
+            </tbody>
             {/*
             {list.id} <br />
             */}
-            옵션 : {list.name} <br />
-            단가 : {list.price} <br />
-            갯수 : {list.choice} <br />
-            최종 가격 : {list.allprice}
-          </p>
-          <button onClick={() => deleitethatlist(list.id)}>삭제</button>
+          </table>
         </div>
       ))}
     </div>
