@@ -37,11 +37,13 @@
 .bucketCash {
   border: none;
   font-size: 2rem;
-
+  background-color: rgb(#BEBEBE);
+  color: black;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 .bucketCash:hover {
-  background-color: black;
+  background-color: rgba(255, 0, 0, 0.5);
   color: white;
   transition: all 0.5s;
 }

@@ -1,15 +1,45 @@
+.cashTable {
+    position: static;
+    margin: auto;
+    width: 500px;
+    height: 250px;
+}
+
+.cashTable tr {
+    font-size: 1.2rem;
+}
+
+.cashTable tr:nth-child(even) {
+    background-color: rgba(255, 0, 0, 0.1)
+}
+
+.cashTable tr:nth-child(odd) {
+    background-color: rgba(0, 0, 255, 0.1)
+}
+
+.cashTable tr:last-child {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.gotoitempage {
+    font-weight: bold;
+}
+
+.gotoitempage:hover {
+    cursor: pointer
+}
+
 .gotocash {
     border: none;
     font-size: 2rem;
+    background-color:rba(#BEBEBE);
+    color:black;
+    transition:background-color 0.5s,color 0.5s;
 }
 
 .gotocash:hover {
-    background-color: black;
+    background-color: rgba(255,0,0,0.5);
     color: white;
-}
-.gotoitempage{
-    font-weight:bold;
-}
-.gotoitempage:hover{
-    cursor:pointer
+    transition:all 0.5s
 }

@@ -11,11 +11,41 @@ export default function Cash() {
     <div>
       <h1>단일 구매페이지 입니다</h1>
       <div>
-        <h3>이름 : {onechoice.name}</h3>
-        <h3>옵션 : {onechoice.option} </h3>
-        <h3>가격 : {onechoice.price.toLocaleString()}원</h3>
-        <h3>갯수 : {onechoice.choice}개</h3>
-        <h3>최종가격 : {onechoice.allprice.toLocaleString()}원</h3>
+        <table className="cashTable">
+          <tbody>
+            <tr>
+              <th>이름</th>
+              <td>{onechoice.name}</td>
+            </tr>
+            <tr>
+              <th>옵션</th>
+              <td>{onechoice.option}</td>
+            </tr>
+            <tr>
+              <th>가격</th>
+              <td>{onechoice.price.toLocaleString()}원</td>
+            </tr>
+            <tr>
+              <th>갯수</th>
+              <td>{onechoice.choice}개</td>
+            </tr>
+            <tr>
+              <th>배송비</th>
+              <td>{onechoice.choice >= 100 ? "무료" : "3000원"}</td>
+            </tr>
+            <tr>
+              <th>총가격</th>
+              <td>
+                {(
+                  (onechoice.choice >= 100 || onechoice.choice === 0
+                    ? 0
+                    : 3000) + onechoice.allprice
+                ).toLocaleString()}
+                원
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <h4>해당 주문이 맞다면 '결제 페이지로 이동' 버튼을 눌려주십시오</h4>
         <p>
           만약 해당 단일 주문을 없애고 싶으시다면{" "}
