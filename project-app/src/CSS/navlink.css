@@ -1,15 +1,19 @@
-.navlink{
-    margin:10px 0;
-    background-color:azure;
-    border:2px solid black;
+.navlink {
+    margin: 10px 10px;
+    background-color: azure;
+    border: 2px solid black;
 }
-.navlink, .navspan{
-    font-size:1.5rem;
+
+.navlink,
+.navspan {
+    font-size: 1.5rem;
 }
-.navlink:hover{
-    color:yellowgreen;
-    transition:all 0.5s;
+
+.navlink:hover {
+    color: yellowgreen;
+    transition: all 0.5s;
 }
-.navall{
-    margin:10px 0;
+
+.navall {
+    margin: 10px 0;
 }

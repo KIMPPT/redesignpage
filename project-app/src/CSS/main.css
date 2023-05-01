@@ -1,10 +1,10 @@
-table {
+.maintable {
   position: relative;
-  right: -60%;
+  left: 60%;
   margin-top: 40px;
 }
 
-td {
+.maintable td {
   padding-bottom: 30px;
   font-size: 1.1rem;
 }
@@ -20,7 +20,7 @@ td {
 
 .mainimagelarge {
   position: absolute;
-  left: 15%;
+  left: 12%;
   width: 300px;
   height: 300px;
   border: solid 1px black;
@@ -54,7 +54,7 @@ td {
   display: flex;
   width: 300px;
   justify-content: space-between;
-  right: 10%;
+  left: 60%;
   bottom: 15%;
 }
 

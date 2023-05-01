@@ -1,0 +1,15 @@
+.gotocash {
+    border: none;
+    font-size: 2rem;
+}
+
+.gotocash:hover {
+    background-color: black;
+    color: white;
+}
+.gotoitempage{
+    font-weight:bold;
+}
+.gotoitempage:hover{
+    cursor:pointer
+}

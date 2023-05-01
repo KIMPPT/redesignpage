@@ -3,6 +3,7 @@ import "../CSS/detail.css";
 export default function Detail() {
   return (
     <div id="2">
+      <h1>물품 상세 정보</h1>
       <img
         src="/image/detail.png"
         alt="상세이미지입니다"

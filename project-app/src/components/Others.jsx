@@ -2,9 +2,10 @@ import React from "react";
 import "../CSS/others.css";
 import { useNavigate } from "react-router-dom";
 export default function Others() {
-  let navigate=useNavigate();
+  let navigate = useNavigate();
   return (
     <div>
+      <h1>해당 상품과 관련된 물품</h1>
       <div className="otherflex" id="3">
         <div>
           <a href="/image1/others">
@@ -35,6 +36,7 @@ export default function Others() {
           </a>
         </div>
       </div>
+      <h3>그 외 공장에서 생산하고 있는 제품들</h3>
       <div className="otherbuttons">
         <a href="/image2">
           <button className="otherproductbutton">제품군2</button>

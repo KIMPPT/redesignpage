@@ -1,21 +1,47 @@
+.bucketTablefixed {
+  margin: auto;
+  right: 0;
+}
+
+.bucketTablefixed .bucketTr {
+  width: 700px;
+  display: grid;
+  grid-template-columns: 2fr 3fr 1.5fr 1fr 2fr 2fr;
+}
+
+.bucketTablefixed .bucketTr>td {
+  border: 1px solid black;
+}
+
+.bucketTablefixed .bucketTr>td {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 .bucketTable {
   margin: auto;
   right: 0;
 }
-.bucketTr {
+
+.bucketTable .bucketTr {
   width: 700px;
   display: grid;
-  grid-template-columns: 5fr 3fr 2fr 5fr 2fr;
+  grid-template-columns: 2fr 3fr 1.5fr 1fr 2fr 2fr;
+  border: 1px solid black;
 }
-.bucketTr > td:first-child {
-  text-align: left;
+
+.bucketTable .bucketTr>td:nth-child(odd) {
+  background-color: rgba(255, 0, 0, 0.2);
 }
-.bucketTr > td:nth-child(3) {
-  background-color: rgba(255, 0, 0, 0.5);
+
+.bucketCash {
+  border: none;
+  font-size: 2rem;
+
 }
-.bucketTr > td:nth-child(1) {
-  background-color: rgba(255, 0, 0, 0.5);
-}
-.bucketTr > td:nth-child(5) {
-  background-color: rgba(255, 0, 0, 0.5);
+
+.bucketCash:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.5s;
 }
