@@ -6,7 +6,7 @@ export default function Mainpage() {
     <div>
       <h1>Mainpage 입니다</h1>
       <Link to="/item1">
-        <button className="product1">제품1</button>
+        <button className="product1">철사</button>
       </Link>
     </div>
   );
