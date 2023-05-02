@@ -9,6 +9,7 @@
   display: grid;
   grid-template-columns: 2fr 3fr 1.5fr 1fr 2fr 2fr;
   border: 1px solid black;
+  line-height: 200%;
 }
 
 .bucketTable .bucketTr>td:nth-child(odd) {

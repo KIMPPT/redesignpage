@@ -21,6 +21,10 @@ a{
 .otherproductbutton{
     font-size:1.2rem;
     margin-bottom:10px;
+    border:none;
+    background-color:gray;
+    color:white;
+    border-radius:20px;
 }
 .otherimages{
     width:50px;

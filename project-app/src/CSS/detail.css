@@ -1,6 +1,11 @@
-li{
-    text-align:left
+li {
+    text-align: left
 }
-.detailimage{
-    margin-top:20px;
+
+.detailimage {
+    margin-top: 20px;
+}
+
+.textbold {
+    font-weight: bold;
 }

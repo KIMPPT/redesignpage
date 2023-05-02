@@ -45,6 +45,9 @@ export default function Cash() {
                 원
               </td>
             </tr>
+            {/*
+            {list.id} <br />
+            */}
           </tbody>
         </table>
         {/*canbuy ? (
@@ -56,9 +59,11 @@ export default function Cash() {
         ) : (
           ""
         )*/}
-        <h4 className="impact">해당 주문이 맞다면 '결제 페이지로 이동' 버튼을 눌려주십시오</h4>
+        <h3 className="impact">
+          해당 주문이 맞다면 '결제 페이지로 이동' 버튼을 눌려주십시오
+        </h3>
         <p>
-          만약 해당 단일 주문을 없애고 싶으시다면{" "}
+          만약 해당 단일 주문이 아니라면{" "}
           <span className="gotoitempage" onClick={() => navigate("/item1")}>
             아이템 화면
           </span>{" "}
