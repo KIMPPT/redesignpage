@@ -10,7 +10,7 @@ export default function Infor() {
           src="/image/longimage.jpg"
           alt="제품홍보사진칸입니다."
           className="inforimg"
-          style={{ width: "70%" }}
+          style={{ width: "90%" }}
         />
       </div>
       <div className="boxbutton">

@@ -3,31 +3,32 @@ import { useState } from "react";
 let DataContext = React.createContext("");
 
 let DataProvider = ({ children }) => {
+  /*물건 이름,옵션 이름,가격 */
   let [price, setPrice] = useState([
     {
       id: 0,
       title: "빈 값",
       price: 0,
       name:"철사",
-      exist:200
     },
     {
       id: 1,
       title: "기본",
       price: 30000,
       name:"철사",
-      exist:200
     },
     {
       id: 2,
       title: "기본+추가옵션1",
       price: 35000,
       name:"철사",
-      exist:200
     },
   ]);
+  //아이템 화면에서의 구매 수량
   let [count, setCount] = useState();
+  //해당 물건의 재고량
   let [stock, setStock] = useState(200);
+  //물건 샘플그림들
   let [picture, setPicture] = useState([
     {
       id: 1,
@@ -42,6 +43,7 @@ let DataProvider = ({ children }) => {
       url: "/image/large3.png",
     },
   ]);
+  //장바구니에 들어갈 자료들
   let [choiceprice, setChoiceprice] = useState([
     {
       id: 0,
@@ -52,6 +54,7 @@ let DataProvider = ({ children }) => {
       allprice: 0,
     },
   ]);
+  //단일구매에 들어갈 자료들
   let [lastchoice, setLastchoice] = useState({
     id: 0,
     choice: 0,
@@ -60,6 +63,7 @@ let DataProvider = ({ children }) => {
     name:"",
     allprice: 0,
   });
+  //장바구니의 배열의 id값
   let [id, setId] = useState(0);
   let value = {
     state: { price, count, stock, picture, choiceprice, id, lastchoice },

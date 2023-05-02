@@ -11,7 +11,7 @@
 
 .box {
   position: relative;
-  left: 3%;
+  margin:auto;
   height: 550px;
   border: solid 1px black;
   width: 90vw;

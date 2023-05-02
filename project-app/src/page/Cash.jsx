@@ -47,7 +47,7 @@ export default function Cash() {
             </tr>
           </tbody>
         </table>
-        {canbuy ? (
+        {/*canbuy ? (
           <h3 className="warning">
             재고량보다 많은 갯수를 주문하였습니다
             <br />
@@ -55,8 +55,8 @@ export default function Cash() {
           </h3>
         ) : (
           ""
-        )}
-        <h4>해당 주문이 맞다면 '결제 페이지로 이동' 버튼을 눌려주십시오</h4>
+        )*/}
+        <h4 className="impact">해당 주문이 맞다면 '결제 페이지로 이동' 버튼을 눌려주십시오</h4>
         <p>
           만약 해당 단일 주문을 없애고 싶으시다면{" "}
           <span className="gotoitempage" onClick={() => navigate("/item1")}>

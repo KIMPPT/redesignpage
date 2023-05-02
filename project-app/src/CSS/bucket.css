@@ -33,7 +33,9 @@
 .bucketTable .bucketTr>td:nth-child(odd) {
   background-color: rgba(255, 0, 0, 0.2);
 }
-
+.impact{
+  font-family:'함초롬바탕';
+}
 .bucketCash {
   border: none;
   font-size: 2rem;

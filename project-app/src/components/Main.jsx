@@ -8,14 +8,17 @@ export default function Main(props) {
   let { state, action } = useContext(DataContext);
   let [choice, setChoice] = useState(0);
   let [imagenumber, setImagenumber] = useState(1);
-  let totalprice =
-    Number(state.count) *
-    state.price.find((price) => price.id === Number(choice)).price;
-  let finalprice = isNaN(totalprice) ? 0 : totalprice;
   /*배송비를 제외한 총 가격은 구매 수량 *
     옵션의 id 값과 Dataprovider에 저장된 price의 id 값을 비교해
     해당하는 객체의 price 값을 꺼내서 곱해줌  */
+  let totalprice =
+    Number(state.count) *
+    state.price.find((price) => price.id === Number(choice)).price;
+  /*최종 가격이 NaN이라고 뜨는 것을 방지하기 위해 NaN이면 0으로 표시 */
+  let finalprice = isNaN(totalprice) ? 0 : totalprice;
+
   let navigate = useNavigate();
+  //단일 구매 버튼 클릭 시 동작할 함수
   let cashbutton = () => {
     let newinfor = {
       name: state.price[choice].name,
@@ -27,11 +30,10 @@ export default function Main(props) {
     };
     action.setLastchoice(newinfor);
     action.setId(state.id + 1);
-    state.count > state.stock
-      ? alert("재고량 보다 많으므로 123-5678 로 문의해주십시오")
-      : alert("단일 구매 페이지로 이동합니다");
+    alert("단일 구매 페이지로 이동합니다");
     navigate("/cash");
   };
+  //보관하기 버튼을 누를 시 동작할 함수
   let addinfor = () => {
     let newinfor = {
       name: state.price[choice].name,
@@ -48,6 +50,7 @@ export default function Main(props) {
     alert("보관함 페이지로 이동합니다");
     navigate("/bucket");
   };
+  //top버튼을 누를 때 동작할 함수
   let topRef = useRef(null);
   let onTopRef = () => {
     topRef.current.scrollIntoView({ behavior: "smooth" });
@@ -69,6 +72,7 @@ export default function Main(props) {
 
   return (
     <div className="box" ref={topRef}>
+      {/*ref로 top 버튼이 돌아올 위치를 잡아줌 */}
       <img
         src={`${
           state.picture.find((pic) => Number(pic.id) === imagenumber).url
@@ -109,6 +113,7 @@ export default function Main(props) {
           </tr>
           <tr>
             <td>옵션 :</td>
+            {/*select 태그로 선택하는 것을 만들어줌 */}
             <td>
               <select name="" id="" onChange={(e) => setChoice(e.target.value)}>
                 <option value="0">옵션을 선택해주세요</option>
@@ -127,11 +132,11 @@ export default function Main(props) {
                 id=""
                 placeholder="0"
                 min={0}
+                //구매 수량을 실시간으로 변화 시켜줌
                 onChange={(e) => action.setCount(e.target.value)}
-                disabled={Number(choice) === 0 ? true : false}
                 //옵션을 기존으로 돌리면 구매 수량을 수정 못하게 하기
+                disabled={Number(choice) === 0 ? true : false}
               />
-              {/*구매 수량을 실시간으로 변화 시켜줌 */}
             </td>
           </tr>
           <tr>
@@ -144,21 +149,28 @@ export default function Main(props) {
           <tr>
             <td>현재 재고량 :</td>
             <td>
-              <span id="exist">{state.price[choice].exist}</span>개
+              <span id="exist">{state.stock}</span>개
             </td>
           </tr>
           <tr>
             <td>최종 가격 :</td>
             <td>{finalprice.toLocaleString()}원</td>
-            {/*옵션이 정해지고 구매 수량도 0보다 클 때 배송비를 포함한 가격을 출력
-              그 외의 경우에는 무조건 0원으로 출력 */}
+            {/*toLocaleString() : 숫자 금액 단위 표시를 해줌 */}
           </tr>
         </tbody>
       </table>
       <div className="buy">
         <button
+          //클릭 시 최종 가격이 0원이면 알림창으로 옵션과수량 선택을 표시해줌
           onClick={() => {
-            finalprice !== 0 ? addinfor() : alert("옵션과수량을 선택해주세요");
+            finalprice !== 0
+              ? state.count > state.stock
+                ? alert(
+                    `재고량보다 많은 수량을 입력했습니다.
+제품을 구매하고 싶으시다면 123-5678로 문의해주시면 답변을 해 드리겠습니다`
+                  )
+                : addinfor()
+              : alert("옵션과수량을 선택해주세요");
           }}
           className="existbutton"
         >
@@ -166,16 +178,27 @@ export default function Main(props) {
         </button>
         <button
           className="buybutton"
+          /*
+          첫번째로 0원인지 아닌지 판별한 후-옵션이나구매수량이 0인 경우
+          구매 수량이 재고량보다 많으면 문의전화 띄우기
+          */
           onClick={() => {
             finalprice !== 0
-              ? cashbutton()
+              ? state.count > state.stock
+                ? alert(
+                    `재고량보다 많은 수량을 입력했습니다.
+제품을 구매하고 싶으시다면 123-5678로 문의해주시면 답변을 해 드리겠습니다`
+                  )
+                : cashbutton()
               : alert("옵션과수량을 선택해주세요");
           }}
         >
+          {/*버튼의 글자도 변경되게 설정 */}
           {state.count > state.stock ? "문의하기" : "구매하기"}
         </button>
       </div>
       <div className="buttons">
+        {/*react-scroll를 이용하기 위해 ScrollLink 컴포넌트를 썼다 */}
         <ScrollLink to="1" spy={true} smooth={true}>
           <button className="moreinfor">물품 설명</button>
         </ScrollLink>

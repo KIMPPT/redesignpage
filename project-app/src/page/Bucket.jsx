@@ -1,11 +1,13 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../context/DataContext";
 import "../CSS/bucket.css";
 export default function Bucket() {
   let navigate = useNavigate();
   let { state, action } = useContext(DataContext);
+  useEffect(() => {}, []);
+  //state.id===0&&navigate(-1)
   let deleitethatlist = (e) => {
     let newlist = state.choiceprice.filter((list) => list.id !== e);
     action.setChoiceprice(newlist);
@@ -20,7 +22,7 @@ export default function Bucket() {
   );
   let canbuy = 0;
   state.choiceprice.map((array) =>
-    state.price[0].exist < array.choice ? (canbuy += 1) : canbuy
+    state.stock < array.choice ? (canbuy += 1) : canbuy
   );
   //console.log(onlypricelist)
   return (
@@ -81,18 +83,22 @@ export default function Bucket() {
           </table>
         </div>
       ))}
-      {state.choiceprice.map((array) =>
+      {/*각각의 갯수를 재고량과 비교해서 장바구니 중 재고량보다 많은 경우 띄우는 경고문 */}
+      {/*state.choiceprice.map((array, id) =>
         state.stock < array.choice ? (
-          <h3 className="warning">
+          <div key={id}>
+          <h3 className="warning" >
             특정 물건이 현재 재고량 보다 많이 때문에 구입이 불가능합니다
-            <br />
+          </h3>
+          <h3>
             주문을 원하신다면 123-5678로 문의를 해 주시면 답변을 드리겠습니다
           </h3>
+          </div>
         ) : (
           ""
         )
-      )}
-      <h3>
+        )*/}
+      <h3 className="impact">
         장바구니에 있는 모든 물건들을 사겠다면 '모두 구매하기' 버튼을 눌려
         주십시오
       </h3>
