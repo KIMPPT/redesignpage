@@ -69,7 +69,13 @@ export default function Main(props) {
   }, []);
   console.log(position);
 */
-
+//구매량이 재고량보다 많을 때 띄워줄 경고문 함수
+  let overalarm = () => {
+    alert(
+      `재고량보다 많은 수량을 입력했습니다.
+제품을 구매하고 싶으시다면 123-5678로 문의해주시면 답변을 해 드리겠습니다`
+    );
+  };
   return (
     <div className="box" ref={topRef}>
       {/*ref로 top 버튼이 돌아올 위치를 잡아줌 */}
@@ -109,13 +115,13 @@ export default function Main(props) {
         <tbody>
           <tr>
             <td>물품이름 :</td>
-            <td>철사</td>
+            <td>{state.price[0].name}</td>
           </tr>
           <tr>
             <td>옵션 :</td>
             {/*select 태그로 선택하는 것을 만들어줌 */}
             <td>
-              <select name="" id="" onChange={(e) => setChoice(e.target.value)}>
+              <select onChange={(e) => setChoice(e.target.value)}>
                 <option value="0">옵션을 선택해주세요</option>
                 <option value="1">기본 : 30000원</option>
                 <option value="2">기본+추가옵션1 : 35000원</option>
@@ -128,8 +134,6 @@ export default function Main(props) {
             <td>
               <input
                 type="number"
-                name=""
-                id=""
                 placeholder="0"
                 min={0}
                 //구매 수량을 실시간으로 변화 시켜줌
@@ -142,14 +146,14 @@ export default function Main(props) {
           <tr>
             <td>배송비 :</td>
             <td>
-              100개 미만 : <span id="tax">3000</span> 원 <br />
+              100개 미만 : 3000원 <br />
               100개 이상 : 무료
             </td>
           </tr>
           <tr>
             <td>현재 재고량 :</td>
             <td>
-              <span id="exist">{state.stock}</span>개
+              {state.stock}개
             </td>
           </tr>
           <tr>
@@ -165,10 +169,7 @@ export default function Main(props) {
           onClick={() => {
             finalprice !== 0
               ? state.count > state.stock
-                ? alert(
-                    `재고량보다 많은 수량을 입력했습니다.
-제품을 구매하고 싶으시다면 123-5678로 문의해주시면 답변을 해 드리겠습니다`
-                  )
+                ? overalarm()
                 : addinfor()
               : alert("옵션과수량을 선택해주세요");
           }}
@@ -185,10 +186,7 @@ export default function Main(props) {
           onClick={() => {
             finalprice !== 0
               ? state.count > state.stock
-                ? alert(
-                    `재고량보다 많은 수량을 입력했습니다.
-제품을 구매하고 싶으시다면 123-5678로 문의해주시면 답변을 해 드리겠습니다`
-                  )
+                ? overalarm()
                 : cashbutton()
               : alert("옵션과수량을 선택해주세요");
           }}
