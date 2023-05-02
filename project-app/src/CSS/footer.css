@@ -20,3 +20,6 @@ svg{
     width:30px;
     height:30px;
 }
+.svgclick:hover{
+    cursor:pointer
+}

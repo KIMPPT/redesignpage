@@ -18,9 +18,16 @@ export default function Footer() {
         <p>FAx번호 : 051-123-5688</p>
       </div>
       <div className="svgicons">
-        <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+        <FontAwesomeIcon icon={faEnvelope} size="2xl" className="svgclick" />
         <br />
-        <FontAwesomeIcon icon={faBlog} size="2xl" />
+        <FontAwesomeIcon
+          icon={faBlog}
+          size="2xl"
+          className="svgclick"
+          onClick={() => {
+            window.open("https://blog.naver.com");
+          }}
+        />
       </div>
     </div>
   );
