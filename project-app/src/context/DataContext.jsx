@@ -8,19 +8,22 @@ let DataProvider = ({ children }) => {
       id: 0,
       title: "빈 값",
       price: 0,
-      name:"철사"
+      name:"철사",
+      exist:200
     },
     {
       id: 1,
       title: "기본",
       price: 30000,
-      name:"철사"
+      name:"철사",
+      exist:200
     },
     {
       id: 2,
       title: "기본+추가옵션1",
       price: 35000,
-      name:"철사"
+      name:"철사",
+      exist:200
     },
   ]);
   let [count, setCount] = useState();
@@ -45,7 +48,7 @@ let DataProvider = ({ children }) => {
       choice: 0,
       price: 0,
       option:"",
-      name: "철사",
+      name:"",
       allprice: 0,
     },
   ]);
@@ -54,8 +57,8 @@ let DataProvider = ({ children }) => {
     choice: 0,
     price: 0,
     option: "",
+    name:"",
     allprice: 0,
-    name:"철사"
   });
   let [id, setId] = useState(0);
   let value = {

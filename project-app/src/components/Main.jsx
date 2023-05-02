@@ -18,7 +18,7 @@ export default function Main(props) {
   let navigate = useNavigate();
   let cashbutton = () => {
     let newinfor = {
-      ...state.lastchoice,
+      name: state.price[choice].name,
       id: state.id + 1,
       option: state.price[choice].title,
       choice: state.count,
@@ -144,7 +144,7 @@ export default function Main(props) {
           <tr>
             <td>현재 재고량 :</td>
             <td>
-              <span id="exist">200</span>개
+              <span id="exist">{state.price[choice].exist}</span>개
             </td>
           </tr>
           <tr>

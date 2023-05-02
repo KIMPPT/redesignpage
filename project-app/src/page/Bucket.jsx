@@ -18,6 +18,10 @@ export default function Bucket() {
   let onlychoicelist = state.choiceprice.map(
     (list) => (sumchoice += Number(list.choice))
   );
+  let canbuy = 0;
+  state.choiceprice.map((array) =>
+    state.price[0].exist < array.choice ? (canbuy += 1) : canbuy
+  );
   //console.log(onlypricelist)
   return (
     <div>
@@ -77,11 +81,23 @@ export default function Bucket() {
           </table>
         </div>
       ))}
+      {state.choiceprice.map((array) =>
+        state.stock < array.choice ? (
+          <h3 className="warning">
+            특정 물건이 현재 재고량 보다 많이 때문에 구입이 불가능합니다
+            <br />
+            주문을 원하신다면 123-5678로 문의를 해 주시면 답변을 드리겠습니다
+          </h3>
+        ) : (
+          ""
+        )
+      )}
       <h3>
         장바구니에 있는 모든 물건들을 사겠다면 '모두 구매하기' 버튼을 눌려
         주십시오
       </h3>
       <button
+        disabled={canbuy === 0 ? false : true}
         className="bucketCash"
         onClick={() =>
           sumprice === 0
@@ -89,7 +105,7 @@ export default function Bucket() {
             : (alert("결제페이지로 갑니다"), navigate("/"))
         }
       >
-        모두 구매하기
+        {canbuy === 0 ? "모두 구매하기" : "구매불가"}
       </button>
     </div>
   );

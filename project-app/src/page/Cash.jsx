@@ -7,6 +7,7 @@ export default function Cash() {
   let { state } = useContext(DataContext);
   let onechoice = state.lastchoice;
   let navigate = useNavigate();
+  let canbuy = onechoice.choice > state.stock;
   return (
     <div>
       <h1>단일 구매페이지 입니다</h1>
@@ -46,6 +47,15 @@ export default function Cash() {
             </tr>
           </tbody>
         </table>
+        {canbuy ? (
+          <h3 className="warning">
+            재고량보다 많은 갯수를 주문하였습니다
+            <br />
+            주문을 원하신다면 123-5678로 문의를 해 주시면 답변을 드리겠습니다
+          </h3>
+        ) : (
+          ""
+        )}
         <h4>해당 주문이 맞다면 '결제 페이지로 이동' 버튼을 눌려주십시오</h4>
         <p>
           만약 해당 단일 주문을 없애고 싶으시다면{" "}
@@ -55,6 +65,7 @@ export default function Cash() {
           페이지로 가서 다시 단일 주문을 해주시면 됩니다
         </p>
         <button
+          disabled={canbuy ? true : false}
           className="gotocash"
           onClick={() =>
             onechoice.allprice === 0
@@ -62,7 +73,7 @@ export default function Cash() {
               : (alert("결제페이지로 갑니다"), navigate("/"))
           }
         >
-          결제 페이지로 이동
+          {canbuy ? "구매불가" : "결제 페이지로 이동"}
         </button>
       </div>
     </div>

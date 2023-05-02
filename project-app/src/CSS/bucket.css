@@ -47,3 +47,7 @@
   color: white;
   transition: all 0.5s;
 }
+
+.warning {
+  color: red;
+}
