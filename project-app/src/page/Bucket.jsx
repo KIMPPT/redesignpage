@@ -26,20 +26,18 @@ export default function Bucket() {
   );
   //console.log(onlypricelist)
   return (
-    <div>
+    <div className="bucketPage">
       <h1>장바구니 페이지 입니다</h1>
       <h3>
-        총 가격 :{" "}
+        총 갯수가 {sumchoice}개 이므로 배송비{" "}
+        {sumchoice >= 100 ? "무료" : "3000원"} 포함 총 가격은{" "}
         {(
           (sumchoice >= 100 || sumprice === 0 ? 0 : 3000) + sumprice
         ).toLocaleString()}
         원 입니다
       </h3>
-      <h3>
-        총 갯수가 {sumchoice}개 이므로 배송비는{" "}
-        {sumchoice >= 100 ? "무료" : "3000원"}입니다
-      </h3>
-      <table className="bucketTablefixed">
+
+      <table className="bucketTable">
         <tbody>
           <tr className="bucketTr">
             <td>물품이름</td>
@@ -49,40 +47,32 @@ export default function Bucket() {
             <td>최종가격</td>
             <td>삭제버튼</td>
           </tr>
+          {state.choiceprice.map((list, id) => (
+            <tr className="bucketTr" key={id}>
+              <td>{list.name}</td>
+              <td>{list.option}</td>
+              <td>{list.price.toLocaleString()}</td>
+              <td>{list.choice}</td>
+              <td>{list.allprice.toLocaleString()}</td>
+              <td>
+                <button
+                  onClick={() => {
+                    if (
+                      window.confirm("해당 장바구니 물품을 삭제하시겠습니까?")
+                    ) {
+                      alert("해당 장바구니 물품을 삭제합니다");
+                      deleitethatlist(list.id);
+                    }
+                  }}
+                >
+                  삭제
+                </button>
+              </td>
+            </tr>
+            /*{list.id} <br />*/
+          ))}
         </tbody>
       </table>
-      {state.choiceprice.map((list, id) => (
-        <div key={id}>
-          <table className="bucketTable">
-            <tbody>
-              <tr className="bucketTr">
-                <td>{list.name}</td>
-                <td>{list.option}</td>
-                <td>{list.price.toLocaleString()}</td>
-                <td>{list.choice}</td>
-                <td>{list.allprice.toLocaleString()}</td>
-                <td>
-                  <button
-                    onClick={() => {
-                      if (
-                        window.confirm("해당 장바구니 물품을 삭제하시겠습니까?")
-                      ) {
-                        alert("해당 장바구니 물품을 삭제합니다");
-                        deleitethatlist(list.id);
-                      }
-                    }}
-                  >
-                    삭제
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-            {/*
-            {list.id} <br />
-            */}
-          </table>
-        </div>
-      ))}
       {/*각각의 갯수를 재고량과 비교해서 장바구니 중 재고량보다 많은 경우 띄우는 경고문 */}
       {/*state.choiceprice.map((array, id) =>
         state.stock < array.choice ? (

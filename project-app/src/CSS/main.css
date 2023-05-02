@@ -1,6 +1,6 @@
 .maintable {
   position: relative;
-  left: 60%;
+  left:65%;
   margin-top: 40px;
 }
 
@@ -54,7 +54,7 @@
   display: flex;
   width: 300px;
   justify-content: space-between;
-  left: 60%;
+  left: 65%;
   bottom: 15%;
 }
 

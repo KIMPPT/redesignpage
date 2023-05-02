@@ -7,6 +7,7 @@ import Bucket from "./page/Bucket";
 import NavLink from "./components/NavLink";
 import Mainpage from "./page/Mainpage";
 import Error from "./page/Error";
+import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
           <Route path='*' element={<Error/>}/>
         </Routes>
       </DataProvider>
+      <Footer/>
     </div>
   );
 }

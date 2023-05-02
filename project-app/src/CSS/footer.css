@@ -1,0 +1,22 @@
+.Footerbox{
+    position:relative;
+    bottom:1%;
+    display:flex;
+    justify-content: space-between;
+    width:80vw;
+    margin:auto;
+}
+.Logo{
+    width:100px;
+    height:100px;
+}
+.writebox{
+    display:grid;
+    width:65vw;
+    grid-template-columns:1fr 1fr;
+    text-align:left;
+}
+svg{
+    width:30px;
+    height:30px;
+}

@@ -9,7 +9,7 @@ export default function Cash() {
   let navigate = useNavigate();
   let canbuy = onechoice.choice > state.stock;
   return (
-    <div>
+    <div className="cashPage">
       <h1>단일 구매페이지 입니다</h1>
       <div>
         <table className="cashTable">
