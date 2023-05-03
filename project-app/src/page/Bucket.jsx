@@ -20,11 +20,13 @@ export default function Bucket() {
   let onlychoicelist = state.choiceprice.map(
     (list) => (sumchoice += Number(list.choice))
   );
+  {/* 보관하기로 수량이 재고량보다 많은 경우 표시할 거였는데 아예 넘기지 않으므로 주석
   let canbuy = 0;
-  state.choiceprice.map((array) =>
+  let resultArray=state.choiceprice.map((array) =>
     state.stock < array.choice ? (canbuy += 1) : canbuy
   );
-  console.log(state.id)
+  console.log(resultArray)
+*/}
   return (
     <div className="bucketPage">
       <h1>장바구니 페이지 입니다</h1>
@@ -93,7 +95,6 @@ export default function Bucket() {
         주십시오
       </h3>
       <button
-        disabled={canbuy === 0 ? false : true}
         className="bucketCash"
         onClick={() =>
           sumprice === 0
@@ -101,7 +102,7 @@ export default function Bucket() {
             : (alert("결제페이지로 갑니다"), navigate("/"))
         }
       >
-        {canbuy === 0 ? "모두 구매하기" : "구매불가"}
+        모두 구매하기
       </button>
     </div>
   );

@@ -7,8 +7,10 @@ export default function Cash() {
   let { state } = useContext(DataContext);
   let onechoice = state.lastchoice;
   let navigate = useNavigate();
+  /*
+  주문수량이 재고량보다 많을 때 bool값 인데 안쓰므로 주석처리
   let canbuy = onechoice.choice > state.stock;
-  console.log(state.id)
+  */
   return (
     <div className="cashPage">
       <h1>단일 구매페이지 입니다</h1>
@@ -71,15 +73,13 @@ export default function Cash() {
           페이지로 가서 다시 단일 주문을 해주시면 됩니다
         </p>
         <button
-          disabled={canbuy ? true : false}
           className="gotocash"
           onClick={() =>
             onechoice.allprice === 0
               ? alert("물건을 구매하지 않았습니다")
               : (alert("결제페이지로 갑니다"), navigate("/"))
           }
-        >
-          {canbuy ? "구매불가" : "결제 페이지로 이동"}
+        >결제 페이지로 이동
         </button>
       </div>
     </div>
