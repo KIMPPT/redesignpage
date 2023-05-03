@@ -152,7 +152,7 @@ export default function Main(props) {
             <td>현재 재고량 :</td>
             <td>{state.stock}개</td>
           </tr>
-          <tr>
+          <tr className="boldtext">
             <td>최종 가격 :</td>
             <td>{finalprice.toLocaleString()}원</td>
             {/*toLocaleString() : 숫자 금액 단위 표시를 해줌 */}
@@ -160,36 +160,41 @@ export default function Main(props) {
         </tbody>
       </table>
       <div className="buy">
-        <button
-          //클릭 시 최종 가격이 0원이면 알림창으로 옵션과수량 선택을 표시해줌
-          onClick={() => {
-            finalprice !== 0
-              ? state.count > state.stock
-                ? overalarm()
-                : addinfor()
-              : alert("옵션과수량을 선택해주세요");
-          }}
-          className="existbutton"
-        >
-          보관하기
-        </button>
-        <button
-          className="buybutton"
-          /*
+        {/*구매수량이 재고량보다 많을 시 기존 보관하기/구매하기 버튼 대신 긴 문의하기 버튼이 나오도록 변경 */}
+        {state.count > state.stock ? (
+          <button className="inquirebutton" onClick={() => overalarm()}>
+            문의하기
+          </button>
+        ) : (
+          <div className="enought">
+            <button
+              //클릭 시 최종 가격이 0원이면 알림창으로 옵션과수량 선택을 표시해줌
+              onClick={() => {
+                finalprice !== 0
+                  ? addinfor()
+                  : alert("옵션과수량을 선택해주세요");
+              }}
+              className="existbutton"
+            >
+              보관하기
+            </button>
+            <button
+              className="buybutton"
+              /*
           첫번째로 0원인지 아닌지 판별한 후-옵션이나구매수량이 0인 경우
           구매 수량이 재고량보다 많으면 문의전화 띄우기
           */
-          onClick={() => {
-            finalprice !== 0
-              ? state.count > state.stock
-                ? overalarm()
-                : cashbutton()
-              : alert("옵션과수량을 선택해주세요");
-          }}
-        >
-          {/*버튼의 글자도 변경되게 설정 */}
-          {state.count > state.stock ? "문의하기" : "구매하기"}
-        </button>
+              onClick={() => {
+                finalprice !== 0
+                  ? cashbutton()
+                  : alert("옵션과수량을 선택해주세요");
+              }}
+            >
+              {/*버튼의 글자도 변경되게 설정 */}
+              {state.count > state.stock ? "문의하기" : "구매하기"}
+            </button>
+          </div>
+        )}
       </div>
       <div className="buttons">
         {/*react-scroll를 이용하기 위해 ScrollLink 컴포넌트를 썼다 */}

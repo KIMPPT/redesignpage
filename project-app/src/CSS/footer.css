@@ -2,9 +2,10 @@
     position:relative;
     bottom:1%;
     display:flex;
-    justify-content: space-between;
-    width:80vw;
+    justify-content: space-evenly;
+    width:95vw;
     margin:auto;
+    border-top:3px solid black;
 }
 .Logo{
     width:100px;
