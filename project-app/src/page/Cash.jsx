@@ -8,6 +8,7 @@ export default function Cash() {
   let onechoice = state.lastchoice;
   let navigate = useNavigate();
   let canbuy = onechoice.choice > state.stock;
+  console.log(state.id)
   return (
     <div className="cashPage">
       <h1>단일 구매페이지 입니다</h1>

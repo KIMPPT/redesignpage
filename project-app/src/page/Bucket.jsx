@@ -24,7 +24,7 @@ export default function Bucket() {
   state.choiceprice.map((array) =>
     state.stock < array.choice ? (canbuy += 1) : canbuy
   );
-  console.log(canbuy)
+  console.log(state.id)
   return (
     <div className="bucketPage">
       <h1>장바구니 페이지 입니다</h1>

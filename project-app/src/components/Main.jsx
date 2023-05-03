@@ -19,30 +19,24 @@ export default function Main(props) {
 
   let navigate = useNavigate();
   //단일 구매 버튼 클릭 시 동작할 함수
+
+  let newinfor = {
+    name: state.price[choice].name,
+    id: state.id + 1,
+    option: state.price[choice].title,
+    choice: state.count,
+    price: state.price[choice].price,
+    allprice: finalprice,
+  };
+
   let cashbutton = () => {
-    let newinfor = {
-      name: state.price[choice].name,
-      id: state.id + 1,
-      option: state.price[choice].title,
-      choice: state.count,
-      price: state.price[choice].price,
-      allprice: finalprice,
-    };
-    action.setLastchoice(newinfor);
     action.setId(state.id + 1);
+    action.setLastchoice(newinfor);
     alert("단일 구매 페이지로 이동합니다");
     navigate("/cash");
   };
   //보관하기 버튼을 누를 시 동작할 함수
   let addinfor = () => {
-    let newinfor = {
-      name: state.price[choice].name,
-      id: state.id + 1,
-      option: state.price[choice].title,
-      choice: state.count,
-      price: state.price[choice].price,
-      allprice: finalprice,
-    };
     action.setId(state.id + 1);
     let newaddinfor = state.choiceprice.concat(newinfor);
     let deleteinfor = newaddinfor.filter((list) => list.id !== 0);
@@ -69,13 +63,17 @@ export default function Main(props) {
   }, []);
   console.log(position);
 */
-//구매량이 재고량보다 많을 때 띄워줄 경고문 함수
+  //구매량이 재고량보다 많을 때 띄워줄 경고문 함수
   let overalarm = () => {
     alert(
       `재고량보다 많은 수량을 입력했습니다.
 제품을 구매하고 싶으시다면 123-5678로 문의해주시면 답변을 해 드리겠습니다`
     );
   };
+  //보관이나 구매 전 페이지를 옮겼다면 갯수 초기화. 옵션부분은 자동으로 초기화 됨
+  useEffect(() => {
+    action.setCount(0);
+  }, []);
   return (
     <div className="box" ref={topRef}>
       {/*ref로 top 버튼이 돌아올 위치를 잡아줌 */}
@@ -100,14 +98,12 @@ export default function Main(props) {
           src="/image/small2.jpg"
           alt="작은이미지2입니다"
           className="wrap"
-          value="2"
           onClick={(e) => setImagenumber(2)}
         />
         <img
           src="/image/small3.png"
           alt="작은이미지3입니다"
           className="wrap"
-          value="2"
           onClick={(e) => setImagenumber(3)}
         />
       </div>
@@ -152,9 +148,7 @@ export default function Main(props) {
           </tr>
           <tr>
             <td>현재 재고량 :</td>
-            <td>
-              {state.stock}개
-            </td>
+            <td>{state.stock}개</td>
           </tr>
           <tr>
             <td>최종 가격 :</td>
