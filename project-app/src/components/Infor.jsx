@@ -5,6 +5,8 @@ export default function Infor() {
   return (
     <div className="inforbox" id="1">
       <h1>물품 설명</h1>
+      {/*
+       */}
       <div className={ischeck ? "imagebox" : "imagebox on"}>
         <img
           src="/image/longimage.jpg"
@@ -13,7 +15,7 @@ export default function Infor() {
           style={{ width: "90%" }}
         />
       </div>
-      <div className="boxbutton">
+      <div className={ischeck?"boxbutton toggle":"boxbutton"}>
         <button
           className="inforbutton"
           onClick={() => {

@@ -4,6 +4,9 @@
     width:90vw;
     justify-content: space-evenly;
 }
+.otherflex span{
+    font-family: 'Nanum Gothic Coding', monospace;
+}
 .go{
     font-size:2rem;
     background-color: transparent;

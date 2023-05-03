@@ -8,14 +8,14 @@ export default function NavLink() {
         className={({ isActive }) => (isActive ? "navlink exist" : "navlink")}
         to="/"
       >
-        메인페이지
+        메인 페이지
       </Navlink>
 
       <Navlink
         className={({ isActive }) => (isActive ? "navlink exist" : "navlink")}
         to="/item1"
       >
-        아이템 화면
+        물품 화면
       </Navlink>
 
       <Navlink
