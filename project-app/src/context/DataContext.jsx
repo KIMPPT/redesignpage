@@ -3,25 +3,52 @@ import { useState } from "react";
 let DataContext = React.createContext("");
 
 let DataProvider = ({ children }) => {
+  //메인페이지 버튼에 들어갈 옵션들
+  let [buttonname,setButtonname]=useState([
+    {
+      page:"product1",
+      productname:"철사",
+      itemname:"지름 1cm 미만",
+      itempage:"item1"
+    },
+    {
+      page:"product1",
+      productname:"철사",
+      itemname:"지름 1cm 이상",
+      itempage:"item2"
+    },
+    {
+      page:"product2",
+      productname:"철근",
+      itemname:"지름 1cm 미만2",
+      itempage:"item1"
+    },
+    {
+      page:"product2",
+      productname:"철근",
+      itemname:"지름 1cm 이상2",
+      itempage:"item2"
+    }
+  ])
   /*물건 이름,옵션 이름,가격 */
   let [price, setPrice] = useState([
     {
       id: 0,
       title: "빈 값",
       price: 0,
-      name:"철사",
+      name: "철사",
     },
     {
       id: 1,
       title: "기본",
       price: 30000,
-      name:"철사",
+      name: "철사",
     },
     {
       id: 2,
       title: "기본+추가옵션1",
       price: 35000,
-      name:"철사",
+      name: "철사",
     },
   ]);
   //아이템 화면에서의 구매 수량
@@ -49,8 +76,8 @@ let DataProvider = ({ children }) => {
       id: 0,
       choice: 0,
       price: 0,
-      option:"",
-      name:"",
+      option: "",
+      name: "",
       allprice: 0,
     },
   ]);
@@ -60,13 +87,13 @@ let DataProvider = ({ children }) => {
     choice: 0,
     price: 0,
     option: "",
-    name:"",
+    name: "",
     allprice: 0,
   });
   //장바구니의 배열의 id값
   let [id, setId] = useState(0);
   let value = {
-    state: { price, count, stock, picture, choiceprice, id, lastchoice },
+    state: { price, count, stock, picture, choiceprice, id, lastchoice,buttonname },
     action: {
       setPrice,
       setCount,
@@ -75,6 +102,7 @@ let DataProvider = ({ children }) => {
       setChoiceprice,
       setId,
       setLastchoice,
+      setButtonname,
     },
   };
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;

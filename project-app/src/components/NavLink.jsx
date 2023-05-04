@@ -13,7 +13,7 @@ export default function NavLink() {
 
       <Navlink
         className={({ isActive }) => (isActive ? "navlink exist" : "navlink")}
-        to="/item1"
+        to="/product1/item1"
       >
         물품 화면
       </Navlink>

@@ -4,12 +4,13 @@ import { useState, useContext, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import DataContext from "../context/DataContext";
 import { useNavigate } from "react-router-dom";
-export default function Main(props) {
+export default function Main() {
   let { state, action } = useContext(DataContext);
   let [choice, setChoice] = useState(0);
   let [imagenumber, setImagenumber] = useState(1);
   let navigate = useNavigate();
-  /*배송비를 제외한 총 가격은 구매 수량 *
+  /*총 가격=
+    구매 수량 *
     옵션의 id 값과 Dataprovider에 저장된 price의 id 값을 비교해
     해당하는 객체의 price 값을 꺼내서 곱해줌  */
   let totalprice =

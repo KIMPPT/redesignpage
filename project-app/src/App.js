@@ -9,7 +9,8 @@ import Mainpage from "./page/Mainpage";
 import Error from "./page/Error";
 import Footer from "./components/Footer";
 import PillsExample from "./components/PillsExample";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Itempage from "./page/Itempage";
+//import "bootstrap/dist/css/bootstrap.min.css";
 //bottstrap을 사용하고 싶지만 css 때문에 겹치게 되고 nav로 해볼려니
 //기능이 정상적으로 작동하지 않아서 보류
 import ColorSchemesExample from "./components/ColorSchemesExample";
@@ -17,18 +18,18 @@ function App() {
   return (
     <div className="App">
       <NavLink />
-      <PillsExample/>
       <DataProvider>
         <Routes>
-          <Route path="/" element={<Mainpage/>}/>
-          <Route path="/item1" element={<Home />}>
-            </Route>
+          <Route path="/" element={<Mainpage />}>
+            <Route path=":list" element={<Itempage />} />
+          </Route>
+          <Route path="/product1/item1" element={<Home />} />
           <Route path="/bucket" element={<Bucket />} />
           <Route path="/cash" element={<Cash />} />
-          <Route path='*' element={<Error/>}/>
+          <Route path="*" element={<Error />} />
         </Routes>
       </DataProvider>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
