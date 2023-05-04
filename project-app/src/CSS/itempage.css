@@ -1,15 +1,17 @@
-.buttonCss{
-    height:50px;
-    margin:0 50px;
-    border:none;
-    font-size:1.2rem;
-    border-radius:25px;
+.buttonCss {
+    height: 50px;
+    margin: 0 50px;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 25px;
 }
-.itempageList{
-    display:flex;
+
+.itempageList {
+    display: flex;
     justify-content: center;
 }
-.buttonCss:hover{
-    background-color:#aaaaff;
-    transition:all 0.5s;
+
+.buttonCss:hover {
+    background-color: #aaaaff;
+    transition: all 0.5s;
 }

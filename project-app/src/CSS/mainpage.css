@@ -1,4 +1,4 @@
-.product{
+.product {
     border: none;
     border-radius: 50px;
     font-size: 1.5rem;
@@ -8,9 +8,11 @@
     height: 50px;
     box-sizing: content-box;
 }
-.first{
+
+.first {
     background-image: url('../../public/image/small1.jpg');
 }
+
 .product:hover {
     background-color: beige;
     font-size: 2rem;
@@ -22,10 +24,11 @@
     min-height: 100vh;
 }
 
-.productList{
-    display:flex;
+.productList {
+    display: flex;
     justify-content: center;
 }
-.second{
-    background-image:url('../../public/image/rebar.jpg')
+
+.second {
+    background-image: url('../../public/image/rebar.jpg')
 }

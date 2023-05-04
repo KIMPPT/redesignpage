@@ -21,8 +21,12 @@ export default function Itempage() {
         {correctarray[1].itemname}
       </button>
         */}
-      {correctarray.map((product,id) => (
-        <button key={id}className="buttonCss" onClick={() => navigate(`item1`)}>
+      {correctarray.map((product, id) => (
+        <button
+          key={id}
+          className="buttonCss"
+          onClick={() => navigate(`${product.itempage}`)}
+        >
           {product.productname}-{product.itemname}
         </button>
       ))}
