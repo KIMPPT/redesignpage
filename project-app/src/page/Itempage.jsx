@@ -25,7 +25,7 @@ export default function Itempage() {
         <button
           key={id}
           className="buttonCss"
-          onClick={() => navigate(`${product.itempage}`)}
+          onClick={() => navigate(`/${product.page}/${product.itempage}`)}
         >
           {product.productname}-{product.itemname}
         </button>

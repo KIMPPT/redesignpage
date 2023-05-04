@@ -4,11 +4,17 @@ import "../CSS/navlink.css";
 export default function NavLink() {
   return (
     <div className="navall">
-      <Navlink
+            <Navlink
         className={({ isActive }) => (isActive ? "navlink exist" : "navlink")}
         to="/"
       >
-        메인 페이지
+        메인 화면
+      </Navlink>
+      <Navlink
+        className={({ isActive }) => (isActive ? "navlink exist" : "navlink")}
+        to="/itemcheck"
+      >
+        생산 제품
       </Navlink>
       {/*
       <Navlink
