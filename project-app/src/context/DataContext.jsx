@@ -4,32 +4,56 @@ let DataContext = React.createContext("");
 
 let DataProvider = ({ children }) => {
   //메인페이지 버튼에 들어갈 옵션들
-  let [buttonname,setButtonname]=useState([
+  let [buttonname, setButtonname] = useState([
     {
-      page:"product1",
-      productname:"철사",
-      itemname:"지름 1cm 미만",
-      itempage:"item1"
+      page: "product1",
+      productname: "철사",
+      itemname: "지름 1cm 미만",
+      itempage: "item1",
     },
     {
-      page:"product1",
-      productname:"철사",
-      itemname:"지름 1cm 이상",
-      itempage:"item2"
+      page: "product1",
+      productname: "철사",
+      itemname: "지름 1cm 이상",
+      itempage: "item2",
     },
     {
-      page:"product2",
-      productname:"철근",
-      itemname:"지름 1cm 미만2",
-      itempage:"item1"
+      page: "product2",
+      productname: "철근",
+      itemname: "지름 1cm 미만2",
+      itempage: "item1",
     },
     {
-      page:"product2",
-      productname:"철근",
-      itemname:"지름 1cm 이상2",
-      itempage:"item2"
-    }
-  ])
+      page: "product2",
+      productname: "철근",
+      itemname: "지름 1cm 이상2",
+      itempage: "item2",
+    },
+    {
+      page: "product3",
+      productname: "구리선",
+      itemname: "지름 1cm 이상3",
+      itempage: "item1",
+    },
+    {
+      page: "product3",
+      productname: "구리선",
+      itemname: "지름 1cm 이상3",
+      itempage: "item2",
+    },
+    {
+      page: "product4",
+      productname: "니켈선",
+      itemname: "지름 1cm 이상3",
+      itempage: "item1",
+    },
+    {
+      page: "product4",
+      productname: "니켈선",
+      itemname: "지름 1cm 이상3",
+      itempage: "item2",
+    },
+  ]);
   /*물건 이름,옵션 이름,가격 */
   let [price, setPrice] = useState([
     {
@@ -93,7 +117,16 @@ let DataProvider = ({ children }) => {
   //장바구니의 배열의 id값
   let [id, setId] = useState(0);
   let value = {
-    state: { price, count, stock, picture, choiceprice, id, lastchoice,buttonname },
+    state: {
+      price,
+      count,
+      stock,
+      picture,
+      choiceprice,
+      id,
+      lastchoice,
+      buttonname,
+    },
     action: {
       setPrice,
       setCount,

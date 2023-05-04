@@ -24,6 +24,12 @@ export default function Mainpage() {
         <Link to="product2">
           <button className="product second">철근</button>
         </Link>
+        <Link to="product3">
+          <button className="product third">구리선</button>
+        </Link>
+        <Link to="product4">
+          <button className="product fourth">니켈선</button>
+        </Link>
       </div>
       <Outlet />
     </div>
