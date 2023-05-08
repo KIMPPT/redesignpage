@@ -5,7 +5,7 @@ export default function Detail() {
     <div id="2">
       <h1>물품 상세 정보</h1>
       <img
-        src="/image/detail.png"
+        src={process.env.PUBLIC_URL+"/image/detail.png"}
         alt="상세이미지입니다"
         className="detailimage"
       />
