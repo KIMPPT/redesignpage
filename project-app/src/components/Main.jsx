@@ -81,7 +81,7 @@ export default function Main() {
     <div className="box" ref={topRef}>
       {/*ref로 top 버튼이 돌아올 위치를 잡아줌 */}
       <img
-        src={`${
+        src={process.env.PUBLIC_URL+`${
           state.picture.find((pic) => Number(pic.id) === imagenumber).url
         }`}
         //이미지 주소를 작은 이미지를 클릭했을 시 id 값을 받아와
@@ -92,19 +92,19 @@ export default function Main() {
       />
       <div className="nav">
         <img
-          src="/image/small1.jpg"
+          src={process.env.PUBLIC_URL+"/image/small1.jpg"}
           alt="작은이미지1입니다"
           className="wrap"
           onClick={(e) => setImagenumber(1)}
         />
         <img
-          src="/image/small2.jpg"
+          src={process.env.PUBLIC_URL+"/image/small2.jpg"}
           alt="작은이미지2입니다"
           className="wrap"
           onClick={(e) => setImagenumber(2)}
         />
         <img
-          src="/image/small3.png"
+          src={process.env.PUBLIC_URL+"/image/small3.png"}
           alt="작은이미지3입니다"
           className="wrap"
           onClick={(e) => setImagenumber(3)}

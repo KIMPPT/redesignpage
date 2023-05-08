@@ -8,7 +8,7 @@ export default function Footer() {
   let navigate = useNavigate();
   return (
     <div className="Footerbox">
-      <img src="/image/companylogo.png" alt="회사상표" className="Logo" />
+      <img src={process.env.PUBLIC_URL+"/image/companylogo.png"} alt="회사상표" className="Logo" />
       <div className="writebox">
         <p>회사명 : (주)강철제단</p>
         <p>주소 : 부산광역시 강서구 XXX</p>
