@@ -7,6 +7,11 @@ export default function Others() {
     <div>
       <h1>해당 상품과 관련된 물품</h1>
       <div className="otherflex" id="3">
+      {/*
+      div-a-img-br-span 부분이 반복된다.
+      이 부분은 filter로 똑같은 객체를 제거하고 그 객체에서 꺼내 쓰는 방법이 좋을듯함
+      문제는 filter로 어떻게 값을 비교해서 제거할 것인가?
+      */}
         <div>
           <a href="/product1/item2">
             <img src="/image/image2.png" alt="" className="otherimages" />
@@ -45,7 +50,7 @@ export default function Others() {
           <button className="otherproductbutton copper">구리선</button>
         </a>
         <a href="/itemcheck/product4">
-          <button className="otherproductbutton nickel">제품군4</button>
+          <button className="otherproductbutton nickel">니켈선</button>
         </a>
       </div>
     </div>

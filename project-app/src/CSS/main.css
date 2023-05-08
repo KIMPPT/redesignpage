@@ -1,6 +1,6 @@
 .maintable {
   position: relative;
-  left:65%;
+  left: 65%;
   margin-top: 40px;
 }
 
@@ -11,11 +11,11 @@
 
 .box {
   position: relative;
-  margin:auto;
+  margin: auto;
   height: 550px;
   width: 90vw;
   margin-bottom: 20px;
-  border-bottom:solid 2px black;
+  border-bottom: solid 2px black;
 }
 
 .mainimagelarge {
@@ -54,32 +54,36 @@
   left: 65%;
   bottom: 15%;
 }
-.enought{
-  display:flex;
+
+.enought {
+  display: flex;
   justify-content: space-between;
 }
+
 .existbutton,
-.buybutton{
+.buybutton {
   width: 120px;
   height: 50px;
   font-size: 1.2rem;
 }
-.inquirebutton{
-  width:280px;
-  height:50px;
-  font-size:1.5rem;
-  background-color:rgba(255,50,50,0.7);
+
+.inquirebutton {
+  width: 280px;
+  height: 50px;
+  font-size: 1.5rem;
+  background-color: rgba(255, 50, 50, 0.7);
   border-radius: 50px;
   border: none;
   color: white;
   font-weight: bold;
 }
+
 button:hover {
   cursor: pointer
 }
 
 .existbutton,
-.buybutton{
+.buybutton {
   border-radius: 50px;
   border: none;
   background-color: rgba(0, 0, 255, 0.5);
@@ -127,6 +131,7 @@ button:hover {
   padding: 5px 10px;
   background-color: aqua;
 }
-.boldtext{
-  font-weight:bold;
+
+.boldtext {
+  font-weight: bold;
 }
