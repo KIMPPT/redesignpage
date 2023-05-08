@@ -9,7 +9,7 @@ export default function Infor() {
        */}
       <div className={ischeck ? "imagebox" : "imagebox on"}>
         <img
-          src="/image/longimage.jpg"
+          src={process.env.PUBLIC_URL+"/image/longimage.jpg"}
           alt="제품홍보사진칸입니다."
           className="inforimg"
           style={{ width: "90%" }}
