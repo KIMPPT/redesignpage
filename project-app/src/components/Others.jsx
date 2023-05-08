@@ -14,14 +14,14 @@ export default function Others() {
       */}
         <div>
           <a href="/product1/item2">
-            <img src="/image/image2.png" alt="" className="otherimages" />
+            <img src={`${process.env.PUBLIC_URL}/image/image2.png`} alt="" className="otherimages" />
             <br />
             <span>제품2</span>
           </a>
         </div>
         <div>
           <a href="/product1/item3">
-            <img src="/image/image3.jpg" alt="" className="otherimages" />
+            <img src={process.env.PUBLIC_URL+"/image/image3.jpg"} alt="" className="otherimages" />
             <br />
             <span>제품3</span>
           </a>
