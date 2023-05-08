@@ -21,10 +21,18 @@ export default function Realmainpage() {
       <h2>Auto Play</h2>
       <Slider {...settings}>
         <div>
-          <img src={process.env.PUBLIC_URL+"/image/mainimage1.jpg"} alt="" className="trackimage" />
+          <img
+            src={process.env.PUBLIC_URL + "/image/mainimage1.jpg"}
+            alt=""
+            className="trackimage"
+          />
         </div>
         <div>
-          <img src={process.env.PUBLIC_URL+"/image/mainimage2.jpg"} alt="" className="trackimage" />
+          <img
+            src={process.env.PUBLIC_URL + "/image/mainimage2.jpg"}
+            alt=""
+            className="trackimage"
+          />
         </div>
       </Slider>
     </div>
