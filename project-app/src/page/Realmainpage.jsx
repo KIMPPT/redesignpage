@@ -18,7 +18,6 @@ export default function Realmainpage() {
   return (
     <div className="realmainPage">
       <h1>(주)강철제단 물건 판매 페이지입니다</h1>
-      <h2>Auto Play</h2>
       <Slider {...settings}>
         <div>
           <img
