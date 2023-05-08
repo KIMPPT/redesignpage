@@ -1,6 +1,7 @@
 import React from "react";
 import "../CSS/others.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 export default function Others() {
   let navigate = useNavigate();
   return (
@@ -13,11 +14,11 @@ export default function Others() {
       문제는 filter로 어떻게 값을 비교해서 제거할 것인가?
       */}
         <div>
-          <a href="/product1/item2">
+          <Link to="/product1/item2">
             <img src={`${process.env.PUBLIC_URL}/image/image2.png`} alt="" className="otherimages" />
             <br />
             <span>제품2</span>
-          </a>
+          </Link>
         </div>
         <div>
           <a href="/product1/item3">
