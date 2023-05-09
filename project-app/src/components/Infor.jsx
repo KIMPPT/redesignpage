@@ -7,7 +7,7 @@ export default function Infor() {
       <h1>물품 설명</h1>
       {/*
        */}
-      <div className={ischeck ? "imagebox" : "imagebox on"}>
+      <div className={ischeck ? "" : "on"}>
         <img
           src={process.env.PUBLIC_URL+"/image/longimage.jpg"}
           alt="제품홍보사진칸입니다."
