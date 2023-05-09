@@ -32,7 +32,7 @@ let DataProvider = ({ children }) => {
     {
       page: "product3",
       productname: "구리선",
-      itemname: "지름 1cm 이상3",
+      itemname: "지름 1cm 미만3",
       itempage: "item1",
     },
     {
@@ -44,13 +44,13 @@ let DataProvider = ({ children }) => {
     {
       page: "product4",
       productname: "니켈선",
-      itemname: "지름 1cm 이상3",
+      itemname: "지름 1cm 미만4",
       itempage: "item1",
     },
     {
       page: "product4",
       productname: "니켈선",
-      itemname: "지름 1cm 이상3",
+      itemname: "지름 1cm 이상4",
       itempage: "item2",
     },
   ]);
