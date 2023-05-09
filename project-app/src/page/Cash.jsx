@@ -14,49 +14,49 @@ export default function Cash() {
   return (
     <div className="cashPage">
       <h1>단일 구매페이지 입니다</h1>
-        {onechoice.id === 0 ? (
-          <h3>물건을 아직 선택하지 않았습니다</h3>
-        ) : (
-          <div>
-            <table className="cashTable">
-              <tbody>
-                <tr>
-                  <th>이름</th>
-                  <td>{onechoice.name}</td>
-                </tr>
-                <tr>
-                  <th>옵션</th>
-                  <td>{onechoice.option}</td>
-                </tr>
-                <tr>
-                  <th>가격</th>
-                  <td>{onechoice.price.toLocaleString()}원</td>
-                </tr>
-                <tr>
-                  <th>갯수</th>
-                  <td>{onechoice.choice}개</td>
-                </tr>
-                <tr>
-                  <th>배송비</th>
-                  <td>{onechoice.choice >= 100 ? "무료" : "3000원"}</td>
-                </tr>
-                <tr>
-                  <th>총가격</th>
-                  <td>
-                    {(
-                      (onechoice.choice >= 100 || onechoice.choice === 0
-                        ? 0
-                        : 3000) + onechoice.allprice
-                    ).toLocaleString()}
-                    원
-                  </td>
-                </tr>
-                {/*
+      {onechoice.id === 0 ? (
+        <h3>물건을 아직 선택하지 않았습니다</h3>
+      ) : (
+        <div>
+          <table className="cashTable">
+            <tbody>
+              <tr>
+                <th>이름</th>
+                <td>{onechoice.name}</td>
+              </tr>
+              <tr>
+                <th>옵션</th>
+                <td>{onechoice.option}</td>
+              </tr>
+              <tr>
+                <th>단가</th>
+                <td>{onechoice.price.toLocaleString()}원</td>
+              </tr>
+              <tr>
+                <th>갯수</th>
+                <td>{onechoice.choice}개</td>
+              </tr>
+              <tr>
+                <th>배송비</th>
+                <td>{onechoice.choice >= 100 ? "무료" : "3000원"}</td>
+              </tr>
+              <tr>
+                <th>총가격</th>
+                <td>
+                  {(
+                    (onechoice.choice >= 100 || onechoice.choice === 0
+                      ? 0
+                      : 3000) + onechoice.allprice
+                  ).toLocaleString()}
+                  원
+                </td>
+              </tr>
+              {/*
             {list.id} <br />
             */}
-              </tbody>
-            </table>
-            {/*canbuy ? (
+            </tbody>
+          </table>
+          {/*canbuy ? (
           <h3 className="warning">
             재고량보다 많은 갯수를 주문하였습니다
             <br />
@@ -65,28 +65,28 @@ export default function Cash() {
         ) : (
           ""
         )*/}
-            <h3 className="impact">
-              해당 주문이 맞다면 '결제 페이지로 이동' 버튼을 눌려주십시오
-            </h3>
-            <p>
-              만약 해당 단일 주문이 아니라면{" "}
-              <span className="gotoitempage" onClick={() => navigate("/item1")}>
-                아이템 화면
-              </span>{" "}
-              페이지로 가서 다시 단일 주문을 해주시면 됩니다
-            </p>
-            <button
-              className="gotocash"
-              onClick={() =>
-                onechoice.allprice === 0
-                  ? alert("물건을 구매하지 않았습니다")
-                  : (alert("결제페이지로 갑니다"), navigate("/"))
-              }
-            >
-              결제 페이지로 이동
-            </button>
-          </div>
-        )}
+          <h3 className="impact">
+            해당 주문이 맞다면 '결제 페이지로 이동' 버튼을 눌려주십시오
+          </h3>
+          <p>
+            만약 해당 단일 주문이 아니라면{" "}
+            <span className="gotoitempage" onClick={() => navigate("/item1")}>
+              아이템 화면
+            </span>{" "}
+            페이지로 가서 다시 단일 주문을 해주시면 됩니다
+          </p>
+          <button
+            className="gotocash"
+            onClick={() =>
+              onechoice.allprice === 0
+                ? alert("물건을 구매하지 않았습니다")
+                : (alert("결제페이지로 갑니다"), navigate("/"))
+            }
+          >
+            결제 페이지로 이동
+          </button>
+        </div>
+      )}
     </div>
   );
 }
