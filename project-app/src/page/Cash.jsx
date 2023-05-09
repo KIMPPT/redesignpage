@@ -70,7 +70,7 @@ export default function Cash() {
           </h3>
           <p>
             만약 해당 단일 주문이 아니라면{" "}
-            <span className="gotoitempage" onClick={() => navigate("/item1")}>
+            <span className="gotoitempage" onClick={() => navigate(-1)}>
               아이템 화면
             </span>{" "}
             페이지로 가서 다시 단일 주문을 해주시면 됩니다
