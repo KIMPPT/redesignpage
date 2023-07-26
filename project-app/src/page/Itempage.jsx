@@ -2,7 +2,6 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import DataContext from "../context/DataContext";
-import "../CSS/itempage.css";
 export default function Itempage() {
   let navigate = useNavigate();
   let params = useParams();
