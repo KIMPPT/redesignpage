@@ -2,6 +2,9 @@ li {
     text-align: left
 }
 
+.detail{
+    margin-top:10px;
+}
 .detailimage {
     margin-top: 20px;
 }

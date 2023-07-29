@@ -1,23 +1,12 @@
 .product {
-    border: none;
-    border-radius: 50px;
-    font-size: 1.5rem;
-    margin: 20px 20px;
-    color: white;
-    width: 200px;
-    height: 50px;
+    width:100px;
+    height:100px;
     box-sizing: content-box;
 }
 
 .first {
     background-image: url('../../public/image/small1.jpg');
-}
 
-.product:hover {
-    background-color: beige;
-    font-size: 2rem;
-    transition: font-size 0.5s;
-    background-position: cover;
 }
 
 .mainPage {
@@ -26,19 +15,23 @@
 
 .productList {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width:70%;
+    margin:auto;
 }
 
 .second {
-    background-image: url('../../public/image/rebar.jpg')
+    background-image: url('../../public/image/rebar.jpg');
+
 }
 
 .third {
-    background-image: url('../../public/image/copper.jpg')
+    background-image: url('../../public/image/copper.jpg');
+
 }
 
 .fourth {
-    background-image: url('../../public/image/nickel2.jpg')
+    background-image: url('../../public/image/nickel2.jpg');
 }
 .infor{
     box-shadow: 10px 5px 5px rgba(0,0,0,0.3);
@@ -55,4 +48,7 @@ a{
     border: none;
     font-size: 1.2rem;
     border-radius: 25px;
+}
+.productList p{
+    font-weight:bold
 }

@@ -2,7 +2,7 @@ import React from "react";
 import "../CSS/detail.css";
 export default function Detail() {
   return (
-    <div id="2">
+    <div id="2" className="detail">
       <h1>물품 상세 정보</h1>
       <img
         src={process.env.PUBLIC_URL+"/image/detail.png"}

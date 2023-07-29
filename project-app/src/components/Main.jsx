@@ -80,123 +80,130 @@ export default function Main() {
   return (
     <div className="box" ref={topRef}>
       {/*ref로 top 버튼이 돌아올 위치를 잡아줌 */}
-      <img
-        src={process.env.PUBLIC_URL+`${
-          state.picture.find((pic) => Number(pic.id) === imagenumber).url
-        }`}
-        //이미지 주소를 작은 이미지를 클릭했을 시 id 값을 받아와
-        //Dataprovide의 큰 이미지 주소가 담긴 id와 비교해
-        //일치하는 객체 안의 큰 이미지 주소를 불러냄
-        alt="이미지자리입니다"
-        className="mainimagelarge"
-      />
-      <div className="nav">
-        <img
-          src={process.env.PUBLIC_URL+"/image/small1.jpg"}
-          alt="작은이미지1입니다"
-          className="wrap"
-          onClick={(e) => setImagenumber(1)}
-        />
-        <img
-          src={process.env.PUBLIC_URL+"/image/small2.jpg"}
-          alt="작은이미지2입니다"
-          className="wrap"
-          onClick={(e) => setImagenumber(2)}
-        />
-        <img
-          src={process.env.PUBLIC_URL+"/image/small3.png"}
-          alt="작은이미지3입니다"
-          className="wrap"
-          onClick={(e) => setImagenumber(3)}
-        />
+      <div className="box1">
+          <img
+            src={
+              process.env.PUBLIC_URL +
+              `${
+                state.picture.find((pic) => Number(pic.id) === imagenumber).url
+              }`
+            }
+            //이미지 주소를 작은 이미지를 클릭했을 시 id 값을 받아와
+            //Dataprovide의 큰 이미지 주소가 담긴 id와 비교해
+            //일치하는 객체 안의 큰 이미지 주소를 불러냄
+            alt="이미지자리입니다"
+            className="mainimagelarge"
+          />
+        <div className="nav">
+          <img
+            src={process.env.PUBLIC_URL + "/image/small1.jpg"}
+            alt="작은이미지1입니다"
+            className="wrap"
+            onClick={(e) => setImagenumber(1)}
+          />
+          <img
+            src={process.env.PUBLIC_URL + "/image/small2.jpg"}
+            alt="작은이미지2입니다"
+            className="wrap"
+            onClick={(e) => setImagenumber(2)}
+          />
+          <img
+            src={process.env.PUBLIC_URL + "/image/small3.png"}
+            alt="작은이미지3입니다"
+            className="wrap"
+            onClick={(e) => setImagenumber(3)}
+          />
+        </div>
       </div>
-      <table className={"maintable"}>
-        <tbody>
-          <tr>
-            <td>물품이름 :</td>
-            <td>{state.price[0].name}</td>
-          </tr>
-          <tr>
-            <td>옵션 :</td>
-            {/*select 태그로 선택하는 것을 만들어줌 */}
-            <td>
-              {/*onchange 함수를 이용해 옵션을 선택에 따라 value 값을 저장함 */}
-              <select onChange={(e) => setChoice(e.target.value)}>
-                <option value="0">옵션을 선택해주세요</option>
-                <option value="1">기본 : 30000원</option>
-                <option value="2">기본+추가옵션1 : 35000원</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td>구매 수량 :</td>
-            <td>
-              <input
-                type="number"
-                placeholder="0"
-                min={0}
-                //구매 수량을 실시간으로 변화 시켜줌
-                onChange={(e) => action.setCount(e.target.value)}
-                //옵션을 기존으로 돌리면 구매 수량을 수정 못하게 하기
-                disabled={Number(choice) === 0 ? true : false}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>배송비 :</td>
-            <td>
-              100개 미만 : 3000원 <br />
-              100개 이상 : 무료
-            </td>
-          </tr>
-          <tr>
-            <td>현재 재고량 :</td>
-            <td>{state.stock}개</td>
-          </tr>
-          <tr className="boldtext">
-            <td>최종 가격 :</td>
-            <td>{finalprice.toLocaleString()}원</td>
-            {/*toLocaleString() : 숫자 금액 단위 표시를 해줌 */}
-          </tr>
-        </tbody>
-      </table>
-      <div className="buy">
-        {/*구매수량이 재고량보다 많을 시 기존 보관하기/구매하기 버튼 대신 긴 문의하기 버튼이 나오도록 변경 */}
-        {state.count > state.stock ? (
-          <button className="inquirebutton" onClick={() => overalarm()}>
-            문의하기
-          </button>
-        ) : (
-          <div className="enought">
-            <button
-              //클릭 시 최종 가격이 0원이면 알림창으로 옵션과수량 선택을 표시해줌
-              onClick={() => {
-                finalprice !== 0
-                  ? addinfor()
-                  : alert("옵션과수량을 선택해주세요");
-              }}
-              className="existbutton"
-            >
-              보관하기
+      <div className="box2">
+        <table className={"maintable"}>
+          <tbody>
+            <tr>
+              <td>물품이름 :</td>
+              <td>{state.price[0].name}</td>
+            </tr>
+            <tr>
+              <td>옵션 :</td>
+              {/*select 태그로 선택하는 것을 만들어줌 */}
+              <td>
+                {/*onchange 함수를 이용해 옵션을 선택에 따라 value 값을 저장함 */}
+                <select onChange={(e) => setChoice(e.target.value)}>
+                  <option value="0">옵션을 선택해주세요</option>
+                  <option value="1">기본 : 30000원</option>
+                  <option value="2">기본+추가옵션1 : 35000원</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>구매 수량 :</td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="0"
+                  min={0}
+                  //구매 수량을 실시간으로 변화 시켜줌
+                  onChange={(e) => action.setCount(e.target.value)}
+                  //옵션을 기존으로 돌리면 구매 수량을 수정 못하게 하기
+                  disabled={Number(choice) === 0 ? true : false}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>배송비 :</td>
+              <td>
+                100개 미만 : 3000원 <br />
+                100개 이상 : 무료
+              </td>
+            </tr>
+            <tr>
+              <td>현재 재고량 :</td>
+              <td>{state.stock}개</td>
+            </tr>
+            <tr className="boldtext">
+              <td>최종 가격 :</td>
+              <td>{finalprice.toLocaleString()}원</td>
+              {/*toLocaleString() : 숫자 금액 단위 표시를 해줌 */}
+            </tr>
+          </tbody>
+        </table>
+        <div className="buy">
+          {/*구매수량이 재고량보다 많을 시 기존 보관하기/구매하기 버튼 대신 긴 문의하기 버튼이 나오도록 변경 */}
+          {state.count > state.stock ? (
+            <button className="inquirebutton" onClick={() => overalarm()}>
+              문의하기
             </button>
-            <button
-              className="buybutton"
-              /*
+          ) : (
+            <div className="enought">
+              <button
+                //클릭 시 최종 가격이 0원이면 알림창으로 옵션과수량 선택을 표시해줌
+                onClick={() => {
+                  finalprice !== 0
+                    ? addinfor()
+                    : alert("옵션과수량을 선택해주세요");
+                }}
+                className="existbutton"
+              >
+                보관하기
+              </button>
+              <button
+                className="buybutton"
+                /*
           첫번째로 0원인지 아닌지 판별한 후-옵션이나구매수량이 0인 경우
           구매 수량이 재고량보다 많으면 문의전화 띄우기
           */
-              onClick={() => {
-                finalprice !== 0
-                  ? cashbutton()
-                  : alert("옵션과수량을 선택해주세요");
-              }}
-            >
-              {/*버튼의 글자도 변경되게 설정-
+                onClick={() => {
+                  finalprice !== 0
+                    ? cashbutton()
+                    : alert("옵션과수량을 선택해주세요");
+                }}
+              >
+                {/*버튼의 글자도 변경되게 설정-
               이미 위에서 구매갯수가 더 많으면 문의하기 버튼으로 수정이 됨*/}
-              구매하기
-            </button>
-          </div>
-        )}
+                구매하기
+              </button>
+            </div>
+          )}
+        </div>
       </div>
       <div className="buttons">
         {/*react-scroll를 이용하기 위해 ScrollLink 컴포넌트를 썼다 */}
@@ -210,9 +217,11 @@ export default function Main() {
           <button className="moreinfor">관련 물품</button>
         </ScrollLink>
       </div>
+      {/*
       <button className="topbutton" onClick={onTopRef}>
         top
       </button>
+      */}
       {/*console.log(window.scrollY)*/}
     </div>
   );
