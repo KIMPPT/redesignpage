@@ -26,6 +26,9 @@
     height:50px;
     background:linear-gradient(to bottom,rgba(255,255,255,0),#ffffff);
 }
+.toggle{
+    padding-top:10px;
+}
 .boxbutton.toggle::before{
     display:none;
 }
