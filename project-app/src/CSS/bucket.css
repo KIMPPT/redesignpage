@@ -5,11 +5,11 @@
 
 .bucketTable .bucketTr {
   width: 700px;
-  height:35px;
+  height:5vh;
   display: grid;
   grid-template-columns: 2fr 3fr 1.5fr 1fr 2fr 2fr;
   border: 1px solid black;
-  line-height: 200%;
+  line-height:250%;
 }
 
 .bucketTable .bucketTr>td:nth-child(odd) {
@@ -20,10 +20,13 @@
 }
 .bucketCash {
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background-color: rgb(#BEBEBE);
   color: black;
   transition: background-color 0.5s, color 0.5s;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 50%;
+  padding:7px 10px;
 }
 
 .bucketCash:hover {
@@ -41,4 +44,7 @@
 }
 .boldtext{
   font-weight:bold;
+}
+.bucketbutton{
+  line-height:normal;
 }

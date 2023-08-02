@@ -65,6 +65,7 @@ export default function Bucket() {
                   <td className="boldtext">{list.allprice.toLocaleString()}</td>
                   <td>
                     <button
+                    className="bucketbutton"
                       onClick={() => {
                         if (
                           window.confirm(
